@@ -1,0 +1,6 @@
+{
+  "name": "RentalGuard AI",
+  "description": "Understand Before You Sign. AI-powered rental agreement risk analyzer and rulebook comparison platform for tenants.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,586 @@
+{
+  "rulebooks": [
+    {
+      "id": "rb-v1-0",
+      "versionLabel": "v1.0",
+      "name": "Baseline Tenant Review Checklist",
+      "description": "Illustrative starter rulebook covering core lease terms such as deposits, lock-in clauses, asymmetric termination notice, maintenance shifting, and automatic renewals.",
+      "createdAt": "2026-11-10T09:00:00.000Z",
+      "rules": [
+        {
+          "id": "rule-deposit-1",
+          "title": "High Security Deposit & Non-Refundable Deductions",
+          "category": "Security Deposit",
+          "description": "Flag security deposits exceeding 2 months of rent, non-refundable cleaning/move-out fees, return windows longer than 30 days, or clauses stating landlord estimates are binding without receipts.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — verify local housing caps before relying",
+          "version": "v1.0",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-10T09:00:00.000Z"
+        },
+        {
+          "id": "rule-lockin-1",
+          "title": "Long Lock-in Period with Double Penalty",
+          "category": "Lock-in Period",
+          "description": "Flag mandatory lock-in periods exceeding 6 months that combine deposit forfeiture with additional multi-month liquidated exit penalties.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — verify local enforceability standards",
+          "version": "v1.0",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-10T09:00:00.000Z"
+        },
+        {
+          "id": "rule-termination-1",
+          "title": "Asymmetric Termination Notice Periods",
+          "category": "Termination & Notice",
+          "description": "Flag clauses requiring significantly longer notice from the tenant (e.g., 60 days) than from the landlord (e.g., 15 days without cause).",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — check local notice parity rules",
+          "version": "v1.0",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-10T09:00:00.000Z"
+        },
+        {
+          "id": "rule-eviction-1",
+          "title": "Short Entry Notice or Self-Help Lockout Language",
+          "category": "Eviction & Entry",
+          "description": "Flag landlord entry with less than 24 hours notice or clauses permitting smart-lock deactivation / lockout without formal cure period or court process.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — consult local tenant protection resources",
+          "version": "v1.0",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-10T09:00:00.000Z"
+        },
+        {
+          "id": "rule-maintenance-1",
+          "title": "Major Appliance or System Repair Burden on Tenant",
+          "category": "Maintenance & Repairs",
+          "description": "Flag clauses shifting structural, HVAC, plumbing, or normal wear-and-tear repair costs onto the tenant (e.g., per-incident repair thresholds).",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — check habitability & repair standards",
+          "version": "v1.0",
+          "severityHint": "MEDIUM",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-10T09:00:00.000Z"
+        },
+        {
+          "id": "rule-penalties-1",
+          "title": "Compounding Daily Late Fees & Short Grace Period",
+          "category": "Penalties & Late Fees",
+          "description": "Flag late fees exceeding 5% of monthly rent or daily compounding penalties after a grace period of 3 days or less.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — verify local late fee reasonableness rules",
+          "version": "v1.0",
+          "severityHint": "MEDIUM",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-10T09:00:00.000Z"
+        },
+        {
+          "id": "rule-renewal-1",
+          "title": "Automatic Annual Renewal with Steep Rent Escalation",
+          "category": "Renewal & Holdover",
+          "description": "Flag auto-renewal clauses locking in another full-year term with >=10% automatic rent escalation or 200% holdover charges.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — check local renewal notice requirements",
+          "version": "v1.0",
+          "severityHint": "MEDIUM",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-10T09:00:00.000Z"
+        },
+        {
+          "id": "rule-utilities-1",
+          "title": "Mandatory Bundled Fees & Restrictive Guest Surcharges",
+          "category": "Utilities & Other Terms",
+          "description": "Flag mandatory third-party internet/amenity packages or strict overnight guest limits with per-night surcharges.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — review before signing",
+          "version": "v1.0",
+          "severityHint": "LOW",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-10T09:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "rb-v1-1",
+      "versionLabel": "v1.1",
+      "name": "Stricter Tenant Protection Profile",
+      "description": "Updated illustrative rulebook escalating discretionary rent/utility surcharges, repair-shifting, and automatic renewal lock-ins to higher scrutiny.",
+      "createdAt": "2026-11-15T14:30:00.000Z",
+      "parentVersionId": "rb-v1-0",
+      "rules": [
+        {
+          "id": "rule-deposit-1",
+          "title": "High Security Deposit & Non-Refundable Deductions",
+          "category": "Security Deposit",
+          "description": "Flag security deposits exceeding 2 months of rent, non-refundable cleaning/move-out fees, return windows longer than 30 days, or clauses stating landlord estimates are binding without receipts.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — verify local housing caps before relying",
+          "version": "v1.1",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-15T14:30:00.000Z"
+        },
+        {
+          "id": "rule-lockin-1",
+          "title": "Long Lock-in Period with Double Penalty",
+          "category": "Lock-in Period",
+          "description": "Flag mandatory lock-in periods exceeding 6 months that combine deposit forfeiture with additional multi-month liquidated exit penalties.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — verify local enforceability standards",
+          "version": "v1.1",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-15T14:30:00.000Z"
+        },
+        {
+          "id": "rule-termination-1",
+          "title": "Asymmetric Termination Notice Periods",
+          "category": "Termination & Notice",
+          "description": "Flag clauses requiring significantly longer notice from the tenant (e.g., 60 days) than from the landlord (e.g., 15 days without cause).",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — check local notice parity rules",
+          "version": "v1.1",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-15T14:30:00.000Z"
+        },
+        {
+          "id": "rule-eviction-1",
+          "title": "Short Entry Notice or Self-Help Lockout Language",
+          "category": "Eviction & Entry",
+          "description": "Flag landlord entry with less than 24 hours notice or clauses permitting smart-lock deactivation / lockout without formal cure period or court process.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — consult local tenant protection resources",
+          "version": "v1.1",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-15T14:30:00.000Z"
+        },
+        {
+          "id": "rule-maintenance-1",
+          "title": "Major Appliance or System Repair Burden on Tenant",
+          "category": "Maintenance & Repairs",
+          "description": "Escalate to HIGH when tenant is required to pay up to $500 per incident for HVAC, plumbing, or normal aging of building systems.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — check habitability & repair standards",
+          "version": "v1.1",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-15T14:30:00.000Z"
+        },
+        {
+          "id": "rule-penalties-1",
+          "title": "Compounding Daily Late Fees & Short Grace Period",
+          "category": "Penalties & Late Fees",
+          "description": "Escalate to HIGH when compounding daily late fees are combined with a flat penalty exceeding $100.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — verify local late fee reasonableness rules",
+          "version": "v1.1",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-15T14:30:00.000Z"
+        },
+        {
+          "id": "rule-rent-discretion",
+          "title": "Unilateral Mid-Lease Utility or Assessment Fee Increases",
+          "category": "Rent & Escalation",
+          "description": "Flag any clause allowing the landlord to unilaterally adjust surcharges or common-area fees mid-lease without a cap or cost documentation.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — newly added in v1.1",
+          "version": "v1.1",
+          "severityHint": "MEDIUM",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-15T14:30:00.000Z"
+        },
+        {
+          "id": "rule-renewal-1",
+          "title": "Automatic Annual Renewal with Steep Rent Escalation",
+          "category": "Renewal & Holdover",
+          "description": "Flag auto-renewal clauses locking in another full-year term with >=10% automatic rent escalation or 200% holdover charges.",
+          "jurisdiction": "General / Illustrative Baseline",
+          "sourceReference": "Illustrative sample heuristic — check local renewal notice requirements",
+          "version": "v1.1",
+          "severityHint": "HIGH",
+          "verificationStatus": "ILLUSTRATIVE",
+          "enabled": true,
+          "updatedAt": "2026-11-15T14:30:00.000Z"
+        }
+      ]
+    }
+  ],
+  "analyses": [
+    {
+      "id": "sample-analysis-oakridge-v1-0",
+      "agreementId": "demo-agreement-oakridge-2026",
+      "title": "Sample Urban Apartment Lease — Oakridge Residences (Unit 4B)",
+      "fileName": "sample-oakridge-lease-2026.txt",
+      "sourceType": "demo",
+      "isDemo": true,
+      "isSampleResult": true,
+      "extractedText": "RESIDENTIAL RENTAL AGREEMENT (SAMPLE DEMO DOCUMENT)\n\nThis Residential Rental Agreement (\"Agreement\") is entered into as of December 1, 2026, by and between Oakridge Property Holdings LLC (\"Landlord\") and Jordan Mercer (\"Tenant\") for the residential premises located at 742 Oakridge Avenue, Apartment 4B (\"Premises\").\n\n1. TERM AND LOCK-IN PERIOD\nThe lease term shall commence on December 1, 2026 and continue for a fixed period of twelve (12) months ending November 30, 2027. The first nine (9) months of the lease shall constitute a mandatory Lock-in Period during which Tenant may not terminate this Agreement for any reason. If Tenant vacates or attempts to terminate during the Lock-in Period, Tenant shall immediately forfeit the entire Security Deposit and pay an additional liquidated early-exit penalty equal to two (2) months' Base Rent.\n\n2. RENT AND ESCALATION\nTenant agrees to pay monthly Base Rent of $2,450.00 due on or before the 1st day of each calendar month. Landlord reserves the right to adjust monthly utilities surcharges and common-area assessment fees at Landlord's discretion upon 15 days' written notice.\n\n3. LATE FEES AND PENALTIES\nAny rent payment received after 5:00 PM on the 3rd day of the month shall incur an immediate flat late fee of $175.00, plus an additional compounding charge of $45.00 per day for each subsequent day rent remains unpaid. Returned or rejected electronic payments shall incur a $95.00 administrative fee.\n\n4. SECURITY DEPOSIT AND DEDUCTIONS\nUpon signing, Tenant shall pay a Security Deposit equal to four (4) months' Base Rent ($9,800.00). Of this amount, $650.00 is designated as a non-refundable administrative move-out and deep-cleaning fee regardless of the condition in which the Premises are returned. Landlord shall have up to sixty (60) days after lease termination to return any remaining balance without interest, and Landlord's itemized repair estimates shall be final and binding without requirement for third-party contractor receipts.\n\n5. TERMINATION AND NOTICE\nAfter the Lock-in Period expires, Tenant must provide at least sixty (60) days' prior written notice to terminate this Agreement at the end of a billing cycle. Landlord, however, may terminate this Agreement without cause at any time upon fifteen (15) days' written notice to Tenant, including for planned renovations or sale of the property.\n\n6. MAINTENANCE AND REPAIRS\nTenant accepts the Premises \"as-is\" and shall be solely responsible for all interior repairs, appliance servicing, plumbing blockages, HVAC filter and compressor maintenance, and electrical fixture replacements up to $500 per incident, even where wear arises from normal aging of building systems. Landlord shall only be responsible for structural roof and exterior foundation repairs exceeding $1,500 per occurrence.\n\n7. ENTRY AND EVICTION\nLandlord or Landlord's agents may enter the Premises at any time with 4 hours' verbal or text notice for inspections, showings to prospective buyers, or maintenance. In the event of any alleged breach of house rules or late payment exceeding five (5) days, Landlord may deactivate smart-lock access credentials and initiate expedited summary repossession without prior cure period.\n\n8. AUTOMATIC RENEWAL AND HOLDOVER\nUnless Tenant delivers written non-renewal notice at least sixty (60) days prior to the expiration date, this Agreement shall automatically renew for an additional twelve (12) month term at a mandatory 12% Base Rent increase. If Tenant holds over past the expiration date without a signed renewal, Tenant shall owe holdover rent equal to 200% of the prior monthly Base Rent, calculated on a full-month basis even for partial-month occupancy.\n\n9. UTILITIES AND GUEST POLICY\nTenant shall pay all electricity, gas, water, sewer, trash, and mandatory smart-building internet package fees ($110/month). Overnight guests staying longer than three (3) consecutive nights require Landlord's prior written approval and a $35/night guest surcharge.",
+      "pageCount": 2,
+      "wordCount": 534,
+      "rulebookVersionId": "rb-v1-0",
+      "rulebookVersionLabel": "v1.0",
+      "rulebookName": "Baseline Tenant Review Checklist",
+      "analyzedAt": "2026-11-16T15:20:00.000Z",
+      "executiveSummary": "This sample residential lease contains several heavily landlord-favored financial and termination provisions, including a 4-month security deposit ($9,800) with a non-refundable fee, a 9-month lock-in carrying a double exit penalty, asymmetric termination notice (60 days tenant vs. 15 days landlord), and smart-lock deactivation language without a cure window.",
+      "informationalDisclaimer": "Informational review only — not legal advice. Findings reflect the illustrative rules in v1.0 and require verification against your local housing regulations or consultation with a qualified attorney.",
+      "keyTerms": {
+        "monthlyRent": "$2,450.00 / month",
+        "securityDeposit": "$9,800.00 (4 months; $650 non-refundable)",
+        "leaseDuration": "12 months (Dec 1, 2026 – Nov 30, 2027)",
+        "lockInPeriod": "9 months (deposit forfeiture + 2 months rent penalty)",
+        "noticePeriod": "Tenant: 60 days · Landlord: 15 days",
+        "lateFeePolicy": "$175 flat after 3 days + $45/day compounding"
+      },
+      "riskCounts": {
+        "high": 4,
+        "medium": 3,
+        "low": 2,
+        "total": 9
+      },
+      "clauses": [
+        {
+          "id": "sample-clause-1",
+          "category": "Security Deposit",
+          "clauseTitle": "Four-Month Deposit, Non-Refundable Fee & Binding Estimates",
+          "riskLevel": "HIGH",
+          "plainEnglish": "You must pay $9,800 upfront (4 months of rent). $650 is automatically kept even if you leave the apartment spotless, the landlord gets 60 days to refund the rest without interest, and they do not have to show contractor receipts for deductions.",
+          "whyItMatters": "High upfront deposits tie up substantial cash, non-refundable fees reduce what you get back regardless of care, and waiving receipt requirements makes it difficult to verify deduction amounts.",
+          "exactSourceText": "Upon signing, Tenant shall pay a Security Deposit equal to four (4) months' Base Rent ($9,800.00). Of this amount, $650.00 is designated as a non-refundable administrative move-out and deep-cleaning fee regardless of the condition in which the Premises are returned. Landlord shall have up to sixty (60) days after lease termination to return any remaining balance without interest, and Landlord's itemized repair estimates shall be final and binding without requirement for third-party contractor receipts.",
+          "matchedRuleIds": [
+            "rule-deposit-1"
+          ],
+          "matchedRuleTitles": [
+            "High Security Deposit & Non-Refundable Deductions"
+          ],
+          "questionsToAsk": [
+            "Can the security deposit be reduced to 1 or 2 months of rent?",
+            "Can we remove the $650 non-refundable fee if the unit is returned in move-in clean condition?",
+            "Will you agree to provide itemized invoices or receipts for any repair deductions within 21–30 days?"
+          ],
+          "recommendation": "Request reducing the deposit multiple, removing the blanket non-refundable fee, shortening the return timeline, and requiring itemized receipts for deductions."
+        },
+        {
+          "id": "sample-clause-2",
+          "category": "Lock-in Period",
+          "clauseTitle": "Nine-Month Lock-in with Deposit Forfeiture Plus Two Months Penalty",
+          "riskLevel": "HIGH",
+          "plainEnglish": "You cannot end the lease during the first 9 months for any reason. Leaving early costs your entire $9,800 deposit plus an extra $4,900 penalty—six months of rent total.",
+          "whyItMatters": "Combining full deposit forfeiture with an extra two-month liquidated penalty creates a severe financial exit barrier ($14,700 total exposure) if job relocation, medical needs, or property issues arise.",
+          "exactSourceText": "The first nine (9) months of the lease shall constitute a mandatory Lock-in Period during which Tenant may not terminate this Agreement for any reason. If Tenant vacates or attempts to terminate during the Lock-in Period, Tenant shall immediately forfeit the entire Security Deposit and pay an additional liquidated early-exit penalty equal to two (2) months' Base Rent.",
+          "matchedRuleIds": [
+            "rule-lockin-1"
+          ],
+          "matchedRuleTitles": [
+            "Long Lock-in Period with Double Penalty"
+          ],
+          "questionsToAsk": [
+            "If I find a qualified replacement tenant approved by management, can the early-exit penalty be waived?",
+            "Can the lock-in penalty be capped at a fixed 1-month fee rather than forfeiting the full deposit plus 2 months rent?"
+          ],
+          "recommendation": "Negotiate a lease-break clause allowing assignment/re-letting to a qualified replacement tenant or capping early-termination fees without forfeiting the entire security deposit."
+        },
+        {
+          "id": "sample-clause-3",
+          "category": "Termination & Notice",
+          "clauseTitle": "Asymmetric Termination Notice (60 Days Tenant vs. 15 Days Landlord)",
+          "riskLevel": "HIGH",
+          "plainEnglish": "After the lock-in period, you must give 60 days written notice to leave, while the landlord can end your lease without cause with only 15 days notice.",
+          "whyItMatters": "Fifteen days is an extremely short window to locate a new home, secure moving logistics, and fund a new deposit, whereas you are held to a 60-day notice obligation.",
+          "exactSourceText": "After the Lock-in Period expires, Tenant must provide at least sixty (60) days' prior written notice to terminate this Agreement at the end of a billing cycle. Landlord, however, may terminate this Agreement without cause at any time upon fifteen (15) days' written notice to Tenant, including for planned renovations or sale of the property.",
+          "matchedRuleIds": [
+            "rule-termination-1"
+          ],
+          "matchedRuleTitles": [
+            "Asymmetric Termination Notice Periods"
+          ],
+          "questionsToAsk": [
+            "Can termination notice periods be made mutual at 30 or 60 days for both parties?",
+            "During the fixed 12-month term, can the landlord remove the \"without cause\" early termination right?"
+          ],
+          "recommendation": "Ask for mutual notice parity (e.g., 30 or 60 days on both sides) and clarify that fixed-term leases cannot be terminated without cause mid-term."
+        },
+        {
+          "id": "sample-clause-4",
+          "category": "Eviction & Entry",
+          "clauseTitle": "Four-Hour Entry Notice & Smart-Lock Deactivation Without Cure Window",
+          "riskLevel": "HIGH",
+          "plainEnglish": "The landlord can enter your apartment with only 4 hours text notice and can disable your smart lock if rent is 5 days late or for any alleged rule violation, without giving you time to fix the issue.",
+          "whyItMatters": "Four hours notice provides minimal privacy protection, and unilateral smart-lock deactivation clauses raise serious lockout and due-process concerns.",
+          "exactSourceText": "Landlord or Landlord's agents may enter the Premises at any time with 4 hours' verbal or text notice for inspections, showings to prospective buyers, or maintenance. In the event of any alleged breach of house rules or late payment exceeding five (5) days, Landlord may deactivate smart-lock access credentials and initiate expedited summary repossession without prior cure period.",
+          "matchedRuleIds": [
+            "rule-eviction-1"
+          ],
+          "matchedRuleTitles": [
+            "Short Entry Notice or Self-Help Lockout Language"
+          ],
+          "questionsToAsk": [
+            "Can non-emergency entry notice be updated to at least 24 or 48 hours written notice?",
+            "Will you remove the smart-lock deactivation language and include a standard written cure notice before any default action?"
+          ],
+          "recommendation": "Request 24–48 hours advance written notice for non-emergency entry and removal of any lock-deactivation / summary lockout language."
+        },
+        {
+          "id": "sample-clause-5",
+          "category": "Maintenance & Repairs",
+          "clauseTitle": "Tenant Responsible for System & Appliance Repairs Up to $500/Incident",
+          "riskLevel": "MEDIUM",
+          "plainEnglish": "You accept the unit \"as-is\" and must pay up to $500 per incident for plumbing, HVAC, electrical, and appliance repairs—even when parts break simply from old age.",
+          "whyItMatters": "Shifting aging-system repairs (such as HVAC compressors or plumbing lines) onto tenants can result in repeated $500 bills for infrastructure you do not own.",
+          "exactSourceText": "Tenant accepts the Premises \"as-is\" and shall be solely responsible for all interior repairs, appliance servicing, plumbing blockages, HVAC filter and compressor maintenance, and electrical fixture replacements up to $500 per incident, even where wear arises from normal aging of building systems.",
+          "matchedRuleIds": [
+            "rule-maintenance-1"
+          ],
+          "matchedRuleTitles": [
+            "Major Appliance or System Repair Burden on Tenant"
+          ],
+          "questionsToAsk": [
+            "Can normal wear-and-tear and major system failures (HVAC, plumbing, appliances) remain the landlord's responsibility?",
+            "Can we complete a documented move-in inspection checklist before the \"as-is\" acceptance takes effect?"
+          ],
+          "recommendation": "Limit tenant repair obligations strictly to damage caused by tenant negligence or minor consumables (lightbulbs/air filters), excluding aging building systems."
+        },
+        {
+          "id": "sample-clause-6",
+          "category": "Penalties & Late Fees",
+          "clauseTitle": "$175 Flat Late Fee After 3 Days Plus $45/Day Compounding Charge",
+          "riskLevel": "MEDIUM",
+          "plainEnglish": "If rent arrives after 5:00 PM on the 3rd, you owe $175 immediately plus $45 every day afterward—meaning a 10-day delay adds $490 in fees.",
+          "whyItMatters": "A short 3-day grace window paired with both a 7.1% flat fee and steep daily compounding charges escalates minor payment timing issues quickly.",
+          "exactSourceText": "Any rent payment received after 5:00 PM on the 3rd day of the month shall incur an immediate flat late fee of $175.00, plus an additional compounding charge of $45.00 per day for each subsequent day rent remains unpaid.",
+          "matchedRuleIds": [
+            "rule-penalties-1"
+          ],
+          "matchedRuleTitles": [
+            "Compounding Daily Late Fees & Short Grace Period"
+          ],
+          "questionsToAsk": [
+            "Can the grace period be extended to the 5th of the month and the daily compounding charge removed?",
+            "Is there a fee-free ACH payment portal option so bank processing delays do not trigger the $95 rejected-payment fee?"
+          ],
+          "recommendation": "Ask for a 5-day grace period and a single capped late fee rather than open-ended daily compounding fees."
+        },
+        {
+          "id": "sample-clause-7",
+          "category": "Renewal & Holdover",
+          "clauseTitle": "Automatic 12-Month Renewal with 12% Escalation & 200% Holdover",
+          "riskLevel": "MEDIUM",
+          "plainEnglish": "If you forget to send written notice at least 60 days before the lease ends, your lease automatically locks in for another full year at $2,744/month (12% higher). Staying past the end date costs double rent for the entire month.",
+          "whyItMatters": "Silent auto-renewal into another 12-month commitment with a 12% increase can trap tenants who expected month-to-month flexibility or a chance to negotiate renewal terms.",
+          "exactSourceText": "Unless Tenant delivers written non-renewal notice at least sixty (60) days prior to the expiration date, this Agreement shall automatically renew for an additional twelve (12) month term at a mandatory 12% Base Rent increase. If Tenant holds over past the expiration date without a signed renewal, Tenant shall owe holdover rent equal to 200% of the prior monthly Base Rent, calculated on a full-month basis even for partial-month occupancy.",
+          "matchedRuleIds": [
+            "rule-renewal-1"
+          ],
+          "matchedRuleTitles": [
+            "Automatic Annual Renewal with Steep Rent Escalation"
+          ],
+          "questionsToAsk": [
+            "Can the lease default to month-to-month after the initial 12 months instead of auto-renewing for a full year?",
+            "Can holdover rent be prorated daily rather than charged for a full month on partial occupancy?"
+          ],
+          "recommendation": "Request converting automatic renewal to month-to-month unless both parties sign a renewal addendum, and prorate any holdover rent daily."
+        },
+        {
+          "id": "sample-clause-8",
+          "category": "Utilities & Other Terms",
+          "clauseTitle": "Mandatory $110/Month Internet Package & Overnight Guest Surcharge",
+          "riskLevel": "LOW",
+          "plainEnglish": "You must pay $110/month for building internet in addition to all utilities, and any guest staying more than 3 consecutive nights requires written approval and a $35/night fee.",
+          "whyItMatters": "While less severe than deposit or eviction terms, mandatory utility bundles raise your true monthly housing cost to at least $2,560+ and strict guest surcharges may affect visiting family.",
+          "exactSourceText": "Tenant shall pay all electricity, gas, water, sewer, trash, and mandatory smart-building internet package fees ($110/month). Overnight guests staying longer than three (3) consecutive nights require Landlord's prior written approval and a $35/night guest surcharge.",
+          "matchedRuleIds": [
+            "rule-utilities-1"
+          ],
+          "matchedRuleTitles": [
+            "Mandatory Bundled Fees & Restrictive Guest Surcharges"
+          ],
+          "questionsToAsk": [
+            "Can the overnight guest threshold be extended to 7–14 days per visit without a nightly surcharge for family?",
+            "What internet speed and equipment are included in the mandatory $110/month package?"
+          ],
+          "recommendation": "Factor the mandatory $110/month into your monthly budget and clarify guest exceptions for visiting family members."
+        },
+        {
+          "id": "sample-clause-9",
+          "category": "Rent & Escalation",
+          "clauseTitle": "Discretionary Mid-Lease Utility & Common-Area Assessment Adjustments",
+          "riskLevel": "LOW",
+          "plainEnglish": "Base rent is $2,450/month on the 1st, but the landlord can raise utility surcharges and common-area fees mid-lease with 15 days written notice.",
+          "whyItMatters": "Open-ended \"at Landlord's discretion\" fee adjustments reduce monthly cost predictability during your fixed term.",
+          "exactSourceText": "Tenant agrees to pay monthly Base Rent of $2,450.00 due on or before the 1st day of each calendar month. Landlord reserves the right to adjust monthly utilities surcharges and common-area assessment fees at Landlord's discretion upon 15 days' written notice.",
+          "matchedRuleIds": [],
+          "matchedRuleTitles": [
+            "General Lease Review"
+          ],
+          "questionsToAsk": [
+            "What are the current monthly common-area assessment fees, and can they be capped for the 12-month term?"
+          ],
+          "recommendation": "Ask to list all recurring fees in writing and cap any mid-lease assessment adjustments to documented third-party utility rate changes."
+        }
+      ],
+      "riskScore": 85,
+      "recommendedActions": [
+        "Request reducing the deposit multiple, removing the blanket non-refundable fee, shortening the return timeline, and requiring itemized receipts for deductions.",
+        "Negotiate a lease-break clause allowing assignment/re-letting to a qualified replacement tenant or capping early-termination fees without forfeiting the entire security deposit.",
+        "Ask for mutual notice parity (e.g., 30 or 60 days on both sides) and clarify that fixed-term leases cannot be terminated without cause mid-term.",
+        "Request 24–48 hours advance written notice for non-emergency entry and removal of any lock-deactivation / summary lockout language.",
+        "Limit tenant repair obligations strictly to damage caused by tenant negligence or minor consumables (lightbulbs/air filters), excluding aging building systems."
+      ],
+      "translations": {
+        "Spanish": {
+          "language": "Spanish",
+          "executiveSummary": "Este modelo de contrato de arrendamiento residencial contiene varias disposiciones financieras y de rescisión que favorecen fuertemente al propietario. Entre estas se incluyen un depósito de seguridad de 4 meses ($9,800) con una tarifa no reembolsable, un periodo de permanencia obligatoria de 9 meses con una penalización doble por salida anticipada, un aviso de rescisión asimétrico (60 días para el inquilino frente a 15 días para el propietario) y una cláusula de desactivación de cerraduras inteligentes sin periodo de subsanación.",
+          "informationalDisclaimer": "Revisión meramente informativa: no constituye asesoramiento legal. Los hallazgos reflejan las reglas ilustrativas de la versión 1.0 y requieren verificación con sus regulaciones de vivienda locales o consulta con un abogado cualificado.",
+          "keyTerms": {
+            "monthlyRent": "$2,450.00 / mes",
+            "securityDeposit": "$9,800.00 (4 meses; $650 no reembolsables)",
+            "leaseDuration": "12 meses (1 de dic. de 2026 – 30 de nov. de 2027)",
+            "lockInPeriod": "9 meses (pérdida del depósito + penalización de 2 meses de renta)",
+            "noticePeriod": "Inquilino: 60 días · Propietario: 15 días",
+            "lateFeePolicy": "$175 tarifa fija después de 3 días + $45/día de recargo compuesto"
+          },
+          "recommendedActions": [
+            "Solicite reducir el múltiplo del depósito, eliminar la tarifa general no reembolsable, acortar el plazo de devolución y exigir recibos detallados para cualquier deducción.",
+            "Negocie una cláusula de rescisión del contrato que permita la cesión o el realquiler a un inquilino de reemplazo cualificado, o que limite las tarifas de terminación anticipada sin perder todo el depósito de seguridad.",
+            "Pida paridad en el aviso de rescisión (por ejemplo, 30 o 60 días para ambas partes) y aclare que los contratos de plazo fijo no pueden rescindirse sin causa justificada a mitad del término.",
+            "Solicite un aviso por escrito con 24–48 horas de antelación para entradas que no sean de emergencia y la eliminación de cualquier cláusula de desactivación de cerraduras o bloqueo sumario.",
+            "Limite las obligaciones de reparación del inquilino estrictamente a los daños causados por negligencia del inquilino o consumibles menores (bombillas/filtros de aire), excluyendo los sistemas de construcción envejecidos."
+          ],
+          "clauses": [
+            {
+              "id": "sample-clause-1",
+              "category": "Depósito de Seguridad",
+              "clauseTitle": "Depósito de cuatro meses, tarifa no reembolsable y estimaciones vinculantes",
+              "plainEnglish": "Debe pagar $9,800 por adelantado (4 meses de renta). Se retienen automáticamente $650 incluso si deja el apartamento impecable. El propietario tiene 60 días para devolver el resto sin intereses y no está obligado a mostrar facturas de contratistas por las deducciones.",
+              "whyItMatters": "Los depósitos elevados inmovilizan una cantidad considerable de dinero, las tarifas no reembolsables reducen lo que recupera independientemente del cuidado que haya tenido, y renunciar al requisito de recibos dificulta la verificación de los montos deducidos.",
+              "questionsToAsk": [
+                "¿Se puede reducir el depósito de seguridad a 1 o 2 meses de renta?",
+                "¿Podemos eliminar la tarifa no reembolsable de $650 si la unidad se entrega en condiciones de limpieza adecuadas?",
+                "¿Aceptaría proporcionar facturas o recibos detallados por cualquier deducción por reparaciones dentro de un plazo de 21–30 días?"
+              ],
+              "recommendation": "Solicite reducir el múltiplo del depósito, eliminar la tarifa general no reembolsable, acortar el plazo de devolución y exigir recibos detallados para cualquier deducción."
+            },
+            {
+              "id": "sample-clause-2",
+              "category": "Periodo de Permanencia (Lock-in)",
+              "clauseTitle": "Permanencia de nueve meses con pérdida del depósito más dos meses de penalización",
+              "plainEnglish": "No puede finalizar el contrato durante los primeros 9 meses por ningún motivo. Salir antes implica perder la totalidad de su depósito de $9,800 más una penalización adicional de $4,900, lo que suma un total de seis meses de renta.",
+              "whyItMatters": "Combinar la pérdida total del depósito con una penalización adicional equivalente a dos meses de renta crea una barrera financiera severa para salir (exposición total de $14,700) si surge una reubicación laboral, necesidades médicas o problemas con la propiedad.",
+              "questionsToAsk": [
+                "Si encuentro un inquilino de reemplazo cualificado aprobado por la administración, ¿se puede eliminar la penalización por salida anticipada?",
+                "¿Se puede limitar la penalización por permanencia a una tarifa fija de 1 mes en lugar de perder todo el depósito más 2 meses de renta?"
+              ],
+              "recommendation": "Negocie una cláusula de rescisión del contrato que permita la cesión o el realquiler a un inquilino de reemplazo cualificado, o que limite las tarifas de terminación anticipada sin perder todo el depósito de seguridad."
+            },
+            {
+              "id": "sample-clause-3",
+              "category": "Rescisión y Aviso",
+              "clauseTitle": "Aviso de rescisión asimétrico (60 días para el inquilino vs. 15 días para el propietario)",
+              "plainEnglish": "Después del periodo de permanencia, debe dar 60 días de aviso por escrito para irse, mientras que el propietario puede finalizar su contrato sin causa con solo 15 días de aviso.",
+              "whyItMatters": "Quince días es un plazo extremadamente corto para encontrar una nueva vivienda, asegurar la logística de la mudanza y financiar un nuevo depósito, mientras que usted está sujeto a una obligación de aviso de 60 días.",
+              "questionsToAsk": [
+                "¿Se pueden igualar los periodos de aviso de rescisión a 30 o 60 días para ambas partes?",
+                "Durante el término fijo de 12 meses, ¿puede el propietario eliminar el derecho de terminación anticipada \"sin causa\"?"
+              ],
+              "recommendation": "Pida paridad en el aviso de rescisión (por ejemplo, 30 o 60 días para ambas partes) y aclare que los contratos de plazo fijo no pueden rescindirse sin causa justificada a mitad del término."
+            },
+            {
+              "id": "sample-clause-4",
+              "category": "Desalojo y Entrada",
+              "clauseTitle": "Aviso de entrada de cuatro horas y desactivación de cerradura inteligente sin periodo de subsanación",
+              "plainEnglish": "El propietario puede entrar a su apartamento con solo 4 horas de aviso por mensaje de texto y puede desactivar su cerradura inteligente si la renta tiene 5 días de retraso o por cualquier violación supuesta de las normas, sin darle tiempo para corregir el problema.",
+              "whyItMatters": "Un aviso de cuatro horas proporciona una protección mínima de la privacidad, y las cláusulas de desactivación unilateral de cerraduras inteligentes plantean serias preocupaciones sobre bloqueos y debido proceso.",
+              "questionsToAsk": [
+                "¿Se puede actualizar el aviso de entrada para casos que no sean de emergencia a al menos 24 o 48 horas por escrito?",
+                "¿Eliminaría el lenguaje de desactivación de cerradura inteligente e incluiría un aviso estándar por escrito de subsanación antes de cualquier acción por incumplimiento?"
+              ],
+              "recommendation": "Solicite 24–48 horas de aviso por escrito para entradas que no sean de emergencia y la eliminación de cualquier lenguaje de desactivación de cerradura o bloqueo sumario."
+            },
+            {
+              "id": "sample-clause-5",
+              "category": "Mantenimiento y Reparaciones",
+              "clauseTitle": "El inquilino es responsable de las reparaciones de sistemas y electrodomésticos hasta $500 por incidente",
+              "plainEnglish": "Usted acepta la unidad \"tal cual\" y debe pagar hasta $500 por incidente por reparaciones de fontanería, climatización (HVAC), electricidad y electrodomésticos, incluso cuando las piezas se rompen simplemente por antigüedad.",
+              "whyItMatters": "Trasladar las reparaciones de sistemas envejecidos (como compresores de HVAC o tuberías) a los inquilinos puede resultar en facturas recurrentes de $500 por infraestructura que usted no posee.",
+              "questionsToAsk": [
+                "¿Pueden el desgaste normal y las fallas de los sistemas principales (HVAC, fontanería, electrodomésticos) seguir siendo responsabilidad del propietario?",
+                "¿Podemos completar una lista de verificación de inspección de entrada documentada antes de que la aceptación \"tal cual\" entre en vigor?"
+              ],
+              "recommendation": "Limite las obligaciones de reparación del inquilino estrictamente a los daños causados por negligencia del inquilino o consumibles menores (bombillas/filtros de aire), excluyendo los sistemas de construcción envejecidos."
+            },
+            {
+              "id": "sample-clause-6",
+              "category": "Penalizaciones y Recargos por Retraso",
+              "clauseTitle": "Tarifa fija por retraso de $175 después de 3 días más un cargo compuesto de $45/día",
+              "plainEnglish": "Si la renta llega después de las 5:00 PM del día 3, debe $175 inmediatamente más $45 cada día posterior; esto significa que un retraso de 10 días añade $490 en tarifas.",
+              "whyItMatters": "Un periodo de gracia corto de 3 días, combinado con una tarifa fija del 7.1% y altos cargos compuestos diarios, escala rápidamente los problemas menores de pago.",
+              "questionsToAsk": [
+                "¿Se puede extender el periodo de gracia hasta el día 5 del mes y eliminar el cargo diario compuesto?",
+                "¿Existe una opción de portal de pago ACH sin comisiones para que los retrasos en el procesamiento bancario no activen la tarifa de $95 por pago rechazado?"
+              ],
+              "recommendation": "Solicite un periodo de gracia de 5 días y una tarifa única por retraso en lugar de cargos compuestos diarios ilimitados."
+            },
+            {
+              "id": "sample-clause-7",
+              "category": "Renovación y Ocupación Continua (Holdover)",
+              "clauseTitle": "Renovación automática de 12 meses con aumento del 12% y 200% por ocupación continua",
+              "plainEnglish": "Si olvida enviar un aviso por escrito al menos 60 días antes de que termine el contrato, este se renueva automáticamente por otro año completo a $2,744/mes (un 12% más). Permanecer después de la fecha de finalización cuesta el doble de la renta durante todo el mes.",
+              "whyItMatters": "La renovación automática silenciosa por otro compromiso de 12 meses con un aumento del 12% puede atrapar a los inquilinos que esperaban flexibilidad de mes a mes o la oportunidad de negociar los términos de renovación.",
+              "questionsToAsk": [
+                "¿Puede el contrato pasar a ser de mes a mes después de los primeros 12 meses en lugar de renovarse automáticamente por un año completo?",
+                "¿Se puede prorratear diariamente la renta por ocupación continua en lugar de cobrarla por un mes completo en caso de ocupación parcial?"
+              ],
+              "recommendation": "Solicite convertir la renovación automática a mes a mes a menos que ambas partes firmen un anexo de renovación, y prorratee diariamente cualquier renta por ocupación continua."
+            },
+            {
+              "id": "sample-clause-8",
+              "category": "Servicios Públicos y Otros Términos",
+              "clauseTitle": "Paquete de internet obligatorio de $110/mes y recargo por invitados que pernocten",
+              "plainEnglish": "Debe pagar $110/mes por internet del edificio además de todos los servicios públicos, y cualquier invitado que se quede más de 3 noches consecutivas requiere aprobación por escrito y una tarifa de $35/noche.",
+              "whyItMatters": "Aunque menos severos que los términos de depósito o desalojo, los paquetes obligatorios de servicios elevan su costo real de vivienda mensual a al menos $2,560+ y los recargos estrictos por invitados pueden afectar a las visitas familiares.",
+              "questionsToAsk": [
+                "¿Se puede extender el umbral para invitados que pernoctan a 7–14 días por visita sin recargo nocturno para familiares?",
+                "¿Qué velocidad de internet y equipo están incluidos en el paquete obligatorio de $110/mes?"
+              ],
+              "recommendation": "Incluya los $110/mes obligatorios en su presupuesto mensual y aclare las excepciones para visitas de familiares."
+            },
+            {
+              "id": "sample-clause-9",
+              "category": "Renta y Escalación",
+              "clauseTitle": "Ajustes discrecionales a mitad del contrato en servicios públicos y cuotas de áreas comunes",
+              "plainEnglish": "La renta base es de $2,450/mes el día 1, pero el propietario puede aumentar los recargos por servicios públicos y las cuotas de áreas comunes a mitad del contrato con 15 días de aviso por escrito.",
+              "whyItMatters": "Los ajustes de tarifas \"a discreción del propietario\" sin límite reducen la previsibilidad de los costos mensuales durante su término fijo.",
+              "questionsToAsk": [
+                "¿Cuáles son las cuotas mensuales actuales por áreas comunes y pueden limitarse durante el término de 12 meses?"
+              ],
+              "recommendation": "Pida listar todas las tarifas recurrentes por escrito y limitar cualquier ajuste a mitad del contrato a los cambios documentados en las tarifas de servicios públicos de terceros."
+            }
+          ],
+          "translatedAt": "2026-11-17T19:20:00.457Z"
+        }
+      }
+    }
+  ]
+}
