@@ -31,13 +31,13 @@ export function LanguageSelector({ compact = false }: LanguageSelectorProps) {
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center justify-between gap-2 text-xs text-zinc-400">
+      <div className="flex items-center justify-between gap-2 text-xs text-slate-600">
         <label htmlFor="global-language-select" className="flex items-center gap-1.5 font-medium">
-          <Globe className="h-3.5 w-3.5 text-violet-400 shrink-0" aria-hidden="true" />
+          <Globe className="h-3.5 w-3.5 text-indigo-600 shrink-0" aria-hidden="true" />
           <span>{t('languageLabel')}</span>
         </label>
         {translatingUi && (
-          <span className="inline-flex items-center gap-1 text-[11px] text-violet-300">
+          <span className="inline-flex items-center gap-1 text-[11px] text-indigo-600">
             <Loader2 className="h-3 w-3 animate-spin" aria-hidden="true" />
             {!compact && <span>{t('translatingInterface')}</span>}
           </span>
@@ -48,7 +48,7 @@ export function LanguageSelector({ compact = false }: LanguageSelectorProps) {
         id="global-language-select"
         value={languageCode}
         onChange={(e) => handleSelectChange(e.target.value)}
-        className="w-full rounded-lg border border-white/[0.1] bg-[#07070C] px-2.5 py-2 text-xs text-zinc-100 focus:border-violet-500 focus:outline-none"
+        className="w-full rounded-lg border border-slate-200 bg-white px-2.5 py-2 text-xs text-slate-800 focus:border-indigo-500 focus:outline-none"
       >
         {SUPPORTED_LANGUAGES.map((lang) => (
           <option key={lang.code} value={lang.code}>
@@ -69,12 +69,12 @@ export function LanguageSelector({ compact = false }: LanguageSelectorProps) {
             value={draftCustom}
             onChange={(e) => setDraftCustom(e.target.value)}
             placeholder={t('customLanguagePlaceholder')}
-            className="min-w-0 flex-1 rounded-lg border border-white/[0.12] bg-[#07070C] px-2.5 py-1.5 text-xs text-zinc-100 placeholder-zinc-500 focus:border-violet-500 focus:outline-none"
+            className="min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:border-indigo-500 focus:outline-none"
           />
           <button
             type="submit"
             disabled={!draftCustom.trim()}
-            className="rounded-lg bg-violet-600 px-2.5 py-1.5 text-[11px] font-semibold text-white hover:bg-violet-500 disabled:opacity-50 whitespace-nowrap shrink-0"
+            className="rounded-lg bg-indigo-600 px-2.5 py-1.5 text-[11px] font-semibold text-white hover:bg-indigo-700 disabled:opacity-50 whitespace-nowrap shrink-0"
           >
             {t('applyLanguage')}
           </button>

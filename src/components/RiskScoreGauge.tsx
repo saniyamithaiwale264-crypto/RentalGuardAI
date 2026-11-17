@@ -11,17 +11,17 @@ export function RiskScoreGauge({ score, size = 'md' }: RiskScoreGaugeProps) {
 
   const strokeColor =
     band.tone === 'high'
-      ? '#EF4444'
+      ? '#DC2626'
       : band.tone === 'medium'
-      ? '#F97316'
-      : '#22C55E';
+      ? '#D97706'
+      : '#16A34A';
 
   const textColor =
     band.tone === 'high'
-      ? 'text-red-400'
+      ? 'text-red-700'
       : band.tone === 'medium'
-      ? 'text-orange-400'
-      : 'text-emerald-400';
+      ? 'text-amber-700'
+      : 'text-emerald-700';
 
   const radius = size === 'sm' ? 34 : 44;
   const strokeWidth = size === 'sm' ? 6 : 8;
@@ -47,7 +47,7 @@ export function RiskScoreGauge({ score, size = 'md' }: RiskScoreGaugeProps) {
             cy={boxSize / 2}
             r={radius}
             fill="none"
-            stroke="rgba(255,255,255,0.08)"
+            stroke="#E2E8F0"
             strokeWidth={strokeWidth}
           />
           <circle
@@ -65,19 +65,19 @@ export function RiskScoreGauge({ score, size = 'md' }: RiskScoreGaugeProps) {
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span
-            className={`font-mono font-bold text-white tabular-nums ${
+            className={`font-mono font-bold text-slate-900 tabular-nums ${
               size === 'sm' ? 'text-lg' : 'text-2xl'
             }`}
           >
             {clamped}
           </span>
-          <span className="font-mono text-[10px] text-zinc-500 tabular-nums">/100</span>
+          <span className="font-mono text-[10px] text-slate-400 tabular-nums">/100</span>
         </div>
       </div>
 
       <div className="min-w-0">
         <div className={`text-sm font-semibold ${textColor}`}>{band.label}</div>
-        <p className="mt-0.5 text-xs text-zinc-400 leading-relaxed">
+        <p className="mt-0.5 text-xs text-slate-500 leading-relaxed">
           Weighted from High, Medium, and Low risk clause findings.
         </p>
       </div>

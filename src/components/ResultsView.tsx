@@ -296,7 +296,7 @@ export function ResultsView({
           <button
             type="button"
             onClick={onBackToDashboard}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
             <span>Back to {t('navDashboard')}</span>
@@ -305,20 +305,20 @@ export function ResultsView({
       )}
 
       {/* Informational Disclaimer */}
-      <div className="flex items-start gap-3 rounded-xl border border-violet-500/25 bg-violet-950/15 px-4 py-3 text-xs text-zinc-300">
-        <Info className="h-4 w-4 text-violet-400 shrink-0 mt-0.5" aria-hidden="true" />
+      <div className="flex items-start gap-3 rounded-xl border border-indigo-200 bg-indigo-50/75 px-4 py-3 text-xs text-slate-700">
+        <Info className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" aria-hidden="true" />
         <p className="leading-relaxed">
-          <span className="font-semibold text-white">Informational Assistance Only (Not Legal Advice):</span>{' '}
+          <span className="font-semibold text-slate-900">Informational Assistance Only (Not Legal Advice):</span>{' '}
           {effectiveAnalysis.informationalDisclaimer}
         </p>
       </div>
 
       {/* Report Translation Bar */}
-      <div className="rounded-xl border border-white/[0.08] bg-[#0C0C14] px-4 py-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-2 text-xs text-zinc-300">
-          <Globe className="h-4 w-4 text-violet-400 shrink-0" aria-hidden="true" />
-          <span className="font-medium text-white">{t('translateReportLabel')}:</span>
-          <span className="text-zinc-400">
+      <div className="rounded-xl border border-slate-200/90 bg-white px-4 py-3 shadow-xs flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-2 text-xs text-slate-700">
+          <Globe className="h-4 w-4 text-indigo-600 shrink-0" aria-hidden="true" />
+          <span className="font-semibold text-slate-900">{t('translateReportLabel')}:</span>
+          <span className="text-slate-500">
             {activeTranslation
               ? `${activeTranslation.language} (quotes preserved verbatim)`
               : `${analysis.language || 'English'} (${t('showOriginal')})`}
@@ -337,7 +337,7 @@ export function ResultsView({
               }
             }}
             disabled={translatingReport}
-            className="rounded-lg border border-white/[0.1] bg-[#07070C] px-2.5 py-1.5 text-xs text-zinc-100 focus:border-violet-500 focus:outline-none disabled:opacity-50"
+            className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs text-slate-800 focus:border-indigo-500 focus:bg-white focus:outline-none disabled:opacity-50"
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
               <option key={lang.code} value={lang.code}>
@@ -362,12 +362,12 @@ export function ResultsView({
                 value={reportCustomLang}
                 onChange={(e) => setReportCustomLang(e.target.value)}
                 placeholder={t('customLanguagePlaceholder')}
-                className="w-44 rounded-lg border border-white/[0.12] bg-[#07070C] px-2.5 py-1.5 text-xs text-zinc-100 placeholder-zinc-500 focus:border-violet-500 focus:outline-none"
+                className="w-44 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:bg-white focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={translatingReport || !reportCustomLang.trim()}
-                className="rounded-lg bg-violet-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-violet-500 disabled:opacity-50 whitespace-nowrap"
+                className="rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-indigo-700 disabled:opacity-50 whitespace-nowrap"
               >
                 {t('applyLanguage')}
               </button>
@@ -375,7 +375,7 @@ export function ResultsView({
           )}
 
           {translatingReport && (
-            <span className="inline-flex items-center gap-1.5 text-xs text-violet-300">
+            <span className="inline-flex items-center gap-1.5 text-xs text-indigo-600">
               <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden="true" />
               <span>{t('translatingReport')}</span>
             </span>
@@ -385,7 +385,7 @@ export function ResultsView({
             <button
               type="button"
               onClick={() => setActiveTranslationLang(null)}
-              className="rounded-lg border border-white/[0.1] bg-white/[0.03] px-2.5 py-1.5 text-xs font-medium text-zinc-300 hover:bg-white/[0.08] whitespace-nowrap"
+              className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-100 whitespace-nowrap"
             >
               {t('showOriginal')} ({analysis.language || 'English'})
             </button>
@@ -396,16 +396,16 @@ export function ResultsView({
       {translateError && (
         <div
           role="alert"
-          className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-xs text-red-200"
+          className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-xs text-red-800"
         >
           {translateError}
         </div>
       )}
 
       {/* Header */}
-      <div className="flex flex-col gap-4 border-b border-white/[0.08] pb-6 lg:flex-row lg:items-start lg:justify-between">
+      <div className="flex flex-col gap-4 border-b border-slate-200 pb-6 lg:flex-row lg:items-start lg:justify-between">
         <div className="space-y-2 min-w-0">
-          <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-400">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
             <span>{analysis.isSampleResult ? 'Sample Demo Analysis' : 'AI Clause Analysis'}</span>
             <span aria-hidden="true">·</span>
             <span className="font-mono">{analysis.rulebookVersionLabel} ({analysis.rulebookName})</span>
@@ -414,7 +414,7 @@ export function ResultsView({
             <span aria-hidden="true">·</span>
             <span className="font-mono tabular-nums">{analysis.wordCount} words</span>
           </div>
-          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white text-balance">
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 text-balance">
             {analysis.title}
           </h1>
         </div>
@@ -423,21 +423,21 @@ export function ResultsView({
           <button
             type="button"
             onClick={() => setShowFullDocument((v) => !v)}
-            className="inline-flex items-center gap-2 rounded-lg border border-white/[0.1] bg-white/[0.03] px-3.5 py-2 text-xs font-medium text-zinc-200 transition-colors hover:bg-white/[0.08] whitespace-nowrap"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:bg-slate-50 whitespace-nowrap"
           >
-            <FileText className="h-3.5 w-3.5 text-zinc-400" aria-hidden="true" />
+            <FileText className="h-3.5 w-3.5 text-slate-500" aria-hidden="true" />
             <span>{showFullDocument ? 'Hide Source Text' : 'View Source Text'}</span>
           </button>
 
           <button
             type="button"
             onClick={handleCopyAllQuestions}
-            className="inline-flex items-center gap-2 rounded-lg border border-white/[0.1] bg-white/[0.03] px-3.5 py-2 text-xs font-medium text-zinc-200 transition-colors hover:bg-white/[0.08] whitespace-nowrap"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:bg-slate-50 whitespace-nowrap"
           >
             {copiedQuestions ? (
-              <Check className="h-3.5 w-3.5 text-emerald-400" aria-hidden="true" />
+              <Check className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
             ) : (
-              <Copy className="h-3.5 w-3.5 text-zinc-400" aria-hidden="true" />
+              <Copy className="h-3.5 w-3.5 text-slate-500" aria-hidden="true" />
             )}
             <span>{copiedQuestions ? 'Copied Questions' : 'Copy Landlord Questions'}</span>
           </button>
@@ -452,16 +452,16 @@ export function ResultsView({
                 languageName: reportSpeechLanguage,
               })
             }
-            className={`inline-flex items-center gap-2 rounded-lg border px-3.5 py-2 text-xs font-medium transition-colors whitespace-nowrap ${
+            className={`inline-flex items-center gap-2 rounded-lg border px-3.5 py-2 text-xs font-medium shadow-xs transition-colors whitespace-nowrap ${
               activeItemId === `report-full-${analysis.id}` && audioStatus !== 'idle'
-                ? 'border-violet-500 bg-violet-600 text-white'
-                : 'border-white/[0.1] bg-white/[0.03] text-zinc-200 hover:bg-white/[0.08]'
+                ? 'border-indigo-600 bg-indigo-600 text-white'
+                : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
             }`}
           >
             {activeItemId === `report-full-${analysis.id}` && audioStatus !== 'idle' ? (
               <Square className="h-3.5 w-3.5" aria-hidden="true" />
             ) : (
-              <Volume2 className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+              <Volume2 className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
             )}
             <span>
               {activeItemId === `report-full-${analysis.id}` && audioStatus !== 'idle'
@@ -473,16 +473,16 @@ export function ResultsView({
           <button
             type="button"
             onClick={() => generateAgreementPdfReport(effectiveAnalysis)}
-            className="inline-flex items-center gap-2 rounded-lg border border-white/[0.1] bg-white/[0.03] px-3.5 py-2 text-xs font-medium text-zinc-200 transition-colors hover:bg-white/[0.08] whitespace-nowrap"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:bg-slate-50 whitespace-nowrap"
           >
-            <Download className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+            <Download className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
             <span>{t('downloadPdfReport')}</span>
           </button>
 
           <button
             type="button"
             onClick={() => onOpenChat(analysis)}
-            className="inline-flex items-center gap-2 rounded-lg border border-violet-500/35 bg-violet-600/15 px-3.5 py-2 text-xs font-medium text-violet-200 transition-colors hover:bg-violet-600/25 whitespace-nowrap"
+            className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3.5 py-2 text-xs font-medium text-indigo-700 transition-colors hover:bg-indigo-100 whitespace-nowrap"
           >
             <MessageSquareText className="h-3.5 w-3.5" aria-hidden="true" />
             <span>{t('askAiChat')}</span>
@@ -491,7 +491,7 @@ export function ResultsView({
           <button
             type="button"
             onClick={() => onCompareVersion(analysis)}
-            className="inline-flex items-center gap-2 rounded-lg bg-violet-600 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-violet-500 whitespace-nowrap"
+            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-xs font-semibold text-white shadow-xs transition-colors hover:bg-indigo-700 whitespace-nowrap"
           >
             <GitCompare className="h-3.5 w-3.5" aria-hidden="true" />
             <span>{t('compareRulebookVersion')}</span>
@@ -501,16 +501,16 @@ export function ResultsView({
 
       {/* Risk Summary Cards + Score Gauge + Distribution */}
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-12">
-        <div className="lg:col-span-5 rounded-xl border border-white/[0.08] bg-[#0C0C14] p-5 flex flex-col justify-between space-y-4">
+        <div className="lg:col-span-5 rounded-xl border border-slate-200/90 bg-white p-5 shadow-xs flex flex-col justify-between space-y-4">
           <div>
             <div className="flex items-center justify-between">
-              <h2 className="font-display text-sm font-semibold text-white">Risk Score &amp; Distribution</h2>
-              <span className="font-mono text-xs text-zinc-400 tabular-nums">
+              <h2 className="font-display text-sm font-semibold text-slate-900">Risk Score &amp; Distribution</h2>
+              <span className="font-mono text-xs text-slate-500 tabular-nums">
                 {analysis.riskCounts.total} Clauses Flagged
               </span>
             </div>
 
-            <div className="mt-4 pb-4 border-b border-white/[0.06] space-y-2.5">
+            <div className="mt-4 pb-4 border-b border-slate-200/80 space-y-2.5">
               <RiskScoreGauge
                 size="sm"
                 score={
@@ -519,7 +519,7 @@ export function ResultsView({
                     : computeRiskScore(analysis.riskCounts)
                 }
               />
-              <div className="flex items-center justify-between text-[11px] text-zinc-500 font-mono tabular-nums">
+              <div className="flex items-center justify-between text-[11px] text-slate-500 font-mono tabular-nums">
                 <span>0–33 Low Attention</span>
                 <span>34–66 Moderate</span>
                 <span>67–100 High Attention</span>
@@ -527,21 +527,21 @@ export function ResultsView({
             </div>
 
             <div className="mt-4 grid grid-cols-3 gap-3">
-              <div className="rounded-lg border border-red-500/25 bg-red-500/[0.06] p-3">
-                <div className="text-xs font-medium text-red-400">High</div>
-                <div className="mt-1 font-mono text-2xl font-semibold text-white tabular-nums">
+              <div className="rounded-lg border border-red-200 bg-red-50/70 p-3">
+                <div className="text-xs font-semibold text-red-700">High</div>
+                <div className="mt-1 font-mono text-2xl font-semibold text-slate-900 tabular-nums">
                   {analysis.riskCounts.high}
                 </div>
               </div>
-              <div className="rounded-lg border border-orange-500/25 bg-orange-500/[0.06] p-3">
-                <div className="text-xs font-medium text-orange-400">Medium</div>
-                <div className="mt-1 font-mono text-2xl font-semibold text-white tabular-nums">
+              <div className="rounded-lg border border-amber-200 bg-amber-50/70 p-3">
+                <div className="text-xs font-semibold text-amber-800">Medium</div>
+                <div className="mt-1 font-mono text-2xl font-semibold text-slate-900 tabular-nums">
                   {analysis.riskCounts.medium}
                 </div>
               </div>
-              <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/[0.06] p-3">
-                <div className="text-xs font-medium text-emerald-400">Low</div>
-                <div className="mt-1 font-mono text-2xl font-semibold text-white tabular-nums">
+              <div className="rounded-lg border border-emerald-200 bg-emerald-50/70 p-3">
+                <div className="text-xs font-semibold text-emerald-700">Low</div>
+                <div className="mt-1 font-mono text-2xl font-semibold text-slate-900 tabular-nums">
                   {analysis.riskCounts.low}
                 </div>
               </div>
@@ -549,7 +549,7 @@ export function ResultsView({
           </div>
 
           <div className="mt-4">
-            <div className="flex h-2 w-full overflow-hidden rounded-full bg-white/[0.06]">
+            <div className="flex h-2 w-full overflow-hidden rounded-full bg-slate-100">
               {analysis.riskCounts.high > 0 && (
                 <div
                   style={{ width: `${highPct}%` }}
@@ -560,7 +560,7 @@ export function ResultsView({
               {analysis.riskCounts.medium > 0 && (
                 <div
                   style={{ width: `${medPct}%` }}
-                  className="bg-orange-500 transition-all"
+                  className="bg-amber-500 transition-all"
                   title={`Medium Risk: ${analysis.riskCounts.medium}`}
                 />
               )}
@@ -576,10 +576,10 @@ export function ResultsView({
         </div>
 
         {/* Executive Summary & Key Lease Terms */}
-        <div className="lg:col-span-7 rounded-xl border border-white/[0.08] bg-[#0C0C14] p-5 space-y-4">
+        <div className="lg:col-span-7 rounded-xl border border-slate-200/90 bg-white p-5 shadow-xs space-y-4">
           <div>
             <div className="flex items-center justify-between gap-2">
-              <h2 className="font-display text-sm font-semibold text-white">
+              <h2 className="font-display text-sm font-semibold text-slate-900">
                 {t('executiveSummary')}
               </h2>
               <button
@@ -594,14 +594,14 @@ export function ResultsView({
                 }
                 className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[11px] font-medium transition-colors whitespace-nowrap ${
                   activeItemId === `summary-${analysis.id}` && audioStatus !== 'idle'
-                    ? 'border-violet-500 bg-violet-600 text-white'
-                    : 'border-white/[0.1] bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08]'
+                    ? 'border-indigo-600 bg-indigo-600 text-white'
+                    : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
                 }`}
               >
                 {activeItemId === `summary-${analysis.id}` && audioStatus !== 'idle' ? (
                   <Square className="h-3 w-3" aria-hidden="true" />
                 ) : (
-                  <Volume2 className="h-3 w-3 text-violet-400" aria-hidden="true" />
+                  <Volume2 className="h-3 w-3 text-indigo-600" aria-hidden="true" />
                 )}
                 <span>
                   {activeItemId === `summary-${analysis.id}` && audioStatus !== 'idle'
@@ -610,63 +610,63 @@ export function ResultsView({
                 </span>
               </button>
             </div>
-            <p className="mt-1.5 text-sm leading-relaxed text-zinc-300">
+            <p className="mt-1.5 text-sm leading-relaxed text-slate-700">
               {effectiveAnalysis.executiveSummary}
             </p>
           </div>
 
-          <div className="border-t border-white/[0.07] pt-4 grid grid-cols-1 gap-x-6 gap-y-3.5 sm:grid-cols-2 md:grid-cols-3 text-xs">
+          <div className="border-t border-slate-200/80 pt-4 grid grid-cols-1 gap-x-6 gap-y-3.5 sm:grid-cols-2 md:grid-cols-3 text-xs">
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-zinc-400">
-                <DollarSign className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+              <div className="flex items-center gap-1.5 text-slate-500">
+                <DollarSign className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>Monthly Rent</span>
               </div>
-              <div className="font-medium text-zinc-100 tabular-nums">
+              <div className="font-semibold text-slate-900 tabular-nums">
                 {effectiveAnalysis.keyTerms.monthlyRent}
               </div>
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-zinc-400">
-                <ShieldCheck className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+              <div className="flex items-center gap-1.5 text-slate-500">
+                <ShieldCheck className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>Security Deposit</span>
               </div>
-              <div className="font-medium text-zinc-100 tabular-nums">
+              <div className="font-semibold text-slate-900 tabular-nums">
                 {effectiveAnalysis.keyTerms.securityDeposit}
               </div>
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-zinc-400">
-                <Calendar className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+              <div className="flex items-center gap-1.5 text-slate-500">
+                <Calendar className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>Lease Duration</span>
               </div>
-              <div className="font-medium text-zinc-100 tabular-nums">
+              <div className="font-semibold text-slate-900 tabular-nums">
                 {effectiveAnalysis.keyTerms.leaseDuration}
               </div>
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-zinc-400">
-                <Lock className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+              <div className="flex items-center gap-1.5 text-slate-500">
+                <Lock className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>Lock-in Period</span>
               </div>
-              <div className="font-medium text-zinc-100 tabular-nums">
+              <div className="font-semibold text-slate-900 tabular-nums">
                 {effectiveAnalysis.keyTerms.lockInPeriod}
               </div>
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-zinc-400">
-                <Clock className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+              <div className="flex items-center gap-1.5 text-slate-500">
+                <Clock className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>Notice Period</span>
               </div>
-              <div className="font-medium text-zinc-100 tabular-nums">
+              <div className="font-semibold text-slate-900 tabular-nums">
                 {effectiveAnalysis.keyTerms.noticePeriod}
               </div>
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-zinc-400">
-                <AlertCircle className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+              <div className="flex items-center gap-1.5 text-slate-500">
+                <AlertCircle className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>Late Fee Policy</span>
               </div>
-              <div className="font-medium text-zinc-100 tabular-nums">
+              <div className="font-semibold text-slate-900 tabular-nums">
                 {effectiveAnalysis.keyTerms.lateFeePolicy}
               </div>
             </div>
@@ -676,11 +676,11 @@ export function ResultsView({
 
       {/* Recommended Actions Before Signing */}
       {recommendedActions.length > 0 && (
-        <section className="rounded-xl border border-white/[0.08] bg-[#0C0C14] p-5">
+        <section className="rounded-xl border border-slate-200/90 bg-white p-5 shadow-xs">
           <div className="flex items-center justify-between gap-2 mb-3">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-violet-400" aria-hidden="true" />
-              <h2 className="font-display text-sm font-semibold text-white">
+              <CheckCircle2 className="h-4 w-4 text-indigo-600" aria-hidden="true" />
+              <h2 className="font-display text-sm font-semibold text-slate-900">
                 {t('recommendedBeforeSigning')}
               </h2>
             </div>
@@ -696,14 +696,14 @@ export function ResultsView({
               }
               className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[11px] font-medium transition-colors whitespace-nowrap ${
                 activeItemId === `actions-${analysis.id}` && audioStatus !== 'idle'
-                  ? 'border-violet-500 bg-violet-600 text-white'
-                  : 'border-white/[0.1] bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08]'
+                  ? 'border-indigo-600 bg-indigo-600 text-white'
+                  : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
               }`}
             >
               {activeItemId === `actions-${analysis.id}` && audioStatus !== 'idle' ? (
                 <Square className="h-3 w-3" aria-hidden="true" />
               ) : (
-                <Volume2 className="h-3 w-3 text-violet-400" aria-hidden="true" />
+                <Volume2 className="h-3 w-3 text-indigo-600" aria-hidden="true" />
               )}
               <span>
                 {activeItemId === `actions-${analysis.id}` && audioStatus !== 'idle'
@@ -716,9 +716,9 @@ export function ResultsView({
             {recommendedActions.map((act, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-2.5 rounded-lg border border-white/[0.06] bg-[#07070C] px-3.5 py-2.5 text-xs text-zinc-300 leading-relaxed"
+                className="flex items-start gap-2.5 rounded-lg border border-slate-200/80 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-700 leading-relaxed"
               >
-                <span className="font-mono text-[11px] font-semibold text-violet-400 shrink-0 mt-0.5">
+                <span className="font-mono text-[11px] font-semibold text-indigo-600 shrink-0 mt-0.5">
                   0{idx + 1}.
                 </span>
                 <span>{act}</span>
@@ -730,9 +730,9 @@ export function ResultsView({
 
       {/* Collapsible Full Source Document */}
       {showFullDocument && (
-        <section className="rounded-xl border border-white/[0.08] bg-[#09090F] p-5">
+        <section className="rounded-xl border border-slate-200/90 bg-white p-5 shadow-xs">
           <div className="flex items-center justify-between gap-3 mb-3">
-            <h2 className="font-display text-sm font-semibold text-white">
+            <h2 className="font-display text-sm font-semibold text-slate-900">
               Original Extracted Document Text
             </h2>
             <div className="flex items-center gap-3">
@@ -748,14 +748,14 @@ export function ResultsView({
                 }
                 className={`inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-[11px] font-medium transition-colors whitespace-nowrap ${
                   activeItemId === `source-${analysis.id}` && audioStatus !== 'idle'
-                    ? 'border-violet-500 bg-violet-600 text-white'
-                    : 'border-white/[0.1] bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08]'
+                    ? 'border-indigo-600 bg-indigo-600 text-white'
+                    : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
                 }`}
               >
                 {activeItemId === `source-${analysis.id}` && audioStatus !== 'idle' ? (
                   <Square className="h-3 w-3" aria-hidden="true" />
                 ) : (
-                  <Volume2 className="h-3 w-3 text-violet-400" aria-hidden="true" />
+                  <Volume2 className="h-3 w-3 text-indigo-600" aria-hidden="true" />
                 )}
                 <span>
                   {activeItemId === `source-${analysis.id}` && audioStatus !== 'idle'
@@ -763,12 +763,12 @@ export function ResultsView({
                     : t('readAloud')}
                 </span>
               </button>
-              <span className="font-mono text-xs text-zinc-500 tabular-nums">
+              <span className="font-mono text-xs text-slate-500 tabular-nums">
                 {analysis.wordCount} words
               </span>
             </div>
           </div>
-          <pre className="max-h-96 overflow-y-auto whitespace-pre-wrap rounded-lg border border-white/[0.06] bg-[#06060A] p-4 font-mono text-xs leading-relaxed text-zinc-300">
+          <pre className="max-h-96 overflow-y-auto whitespace-pre-wrap rounded-lg border border-slate-200 bg-slate-50 p-4 font-mono text-xs leading-relaxed text-slate-700">
             {analysis.extractedText}
           </pre>
         </section>
@@ -776,7 +776,7 @@ export function ResultsView({
 
       {/* Filter Bar */}
       <section className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="inline-flex flex-wrap items-center gap-1 rounded-lg border border-white/[0.08] bg-[#0C0C14] p-1">
+        <div className="inline-flex flex-wrap items-center gap-1 rounded-lg border border-slate-200/90 bg-white p-1 shadow-xs">
           {(['ALL', 'HIGH', 'MEDIUM', 'LOW'] as const).map((level) => {
             const active = riskFilter === level;
             const label =
@@ -795,8 +795,8 @@ export function ResultsView({
                 onClick={() => setRiskFilter(level)}
                 className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors whitespace-nowrap ${
                   active
-                    ? 'bg-violet-600 text-white'
-                    : 'text-zinc-400 hover:text-zinc-100'
+                    ? 'bg-indigo-600 text-white'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                 }`}
               >
                 {label}
@@ -810,16 +810,16 @@ export function ResultsView({
             <button
               type="button"
               onClick={toggleAllVisible}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.1] bg-[#0C0C14] px-3 py-2 text-xs font-medium text-zinc-300 transition-colors hover:bg-white/[0.05] whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:bg-slate-50 whitespace-nowrap"
             >
               {anyExpanded ? (
                 <>
-                  <ChevronUp className="h-3.5 w-3.5 text-zinc-400" aria-hidden="true" />
+                  <ChevronUp className="h-3.5 w-3.5 text-slate-500" aria-hidden="true" />
                   <span>Collapse All</span>
                 </>
               ) : (
                 <>
-                  <ChevronDown className="h-3.5 w-3.5 text-zinc-400" aria-hidden="true" />
+                  <ChevronDown className="h-3.5 w-3.5 text-slate-500" aria-hidden="true" />
                   <span>Expand All</span>
                 </>
               )}
@@ -830,7 +830,7 @@ export function ResultsView({
             aria-label="Filter by clause category"
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="rounded-lg border border-white/[0.1] bg-[#0C0C14] px-3 py-2 text-xs text-zinc-200 focus:border-violet-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-800 shadow-xs focus:border-indigo-500 focus:outline-none"
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>
@@ -841,7 +841,7 @@ export function ResultsView({
 
           <div className="relative sm:w-56">
             <Search
-              className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-zinc-500"
+              className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-slate-400"
               aria-hidden="true"
             />
             <input
@@ -849,7 +849,7 @@ export function ResultsView({
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Filter clauses or quotes..."
-              className="w-full rounded-lg border border-white/[0.1] bg-[#0C0C14] py-2 pl-8 pr-3 text-xs text-zinc-200 placeholder-zinc-500 focus:border-violet-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-8 pr-3 text-xs text-slate-800 placeholder-slate-400 shadow-xs focus:border-indigo-500 focus:outline-none"
             />
           </div>
         </div>
@@ -858,7 +858,7 @@ export function ResultsView({
       {/* Clause-by-Clause Findings */}
       <section className="space-y-4">
         {filteredClauses.length === 0 ? (
-          <div className="rounded-xl border border-white/[0.08] bg-[#0C0C14] p-10 text-center text-sm text-zinc-400">
+          <div className="rounded-xl border border-slate-200/90 bg-white p-10 text-center text-sm text-slate-500 shadow-xs">
             No clauses match the current filter criteria.
           </div>
         ) : (
@@ -867,17 +867,17 @@ export function ResultsView({
             return (
               <article
                 key={clause.id}
-                className="rounded-xl border border-white/[0.08] bg-[#0C0C14] p-5 sm:p-6 transition-colors hover:border-white/[0.14]"
+                className="rounded-xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs transition-colors hover:border-slate-300"
               >
                 {/* Clause Header */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-1.5 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-400">
-                      <span className="font-medium text-violet-300">{clause.category}</span>
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                      <span className="font-semibold text-indigo-600">{clause.category}</span>
                       <span aria-hidden="true">·</span>
                       <span>Rule: {clause.matchedRuleTitles.join(', ')}</span>
                     </div>
-                    <h3 className="font-display text-lg font-semibold text-white">
+                    <h3 className="font-display text-lg font-semibold text-slate-900">
                       {clause.clauseTitle}
                     </h3>
                   </div>
@@ -891,9 +891,9 @@ export function ResultsView({
                           `Explain the "${clause.clauseTitle}" clause in simple terms and tell me what I should clarify or negotiate before signing.`
                         )
                       }
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-zinc-300 transition-colors hover:border-violet-500/40 hover:bg-violet-600/15 hover:text-violet-200 whitespace-nowrap"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-700 transition-colors hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700 whitespace-nowrap"
                     >
-                      <MessageSquareText className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+                      <MessageSquareText className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                       <span>{t('askAi')}</span>
                     </button>
                     <button
@@ -909,14 +909,14 @@ export function ResultsView({
                       aria-label={`${t('readClause')}: ${clause.clauseTitle}`}
                       className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-medium transition-colors whitespace-nowrap ${
                         activeItemId === `clause-${clause.id}` && audioStatus !== 'idle'
-                          ? 'border-violet-500 bg-violet-600 text-white'
-                          : 'border-white/[0.08] bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08] hover:text-zinc-100'
+                          ? 'border-indigo-600 bg-indigo-600 text-white'
+                          : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                       }`}
                     >
                       {activeItemId === `clause-${clause.id}` && audioStatus !== 'idle' ? (
                         <Square className="h-3 w-3" aria-hidden="true" />
                       ) : (
-                        <Volume2 className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+                        <Volume2 className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                       )}
                       <span>
                         {activeItemId === `clause-${clause.id}` && audioStatus !== 'idle'
@@ -930,7 +930,7 @@ export function ResultsView({
                       onClick={() => toggleClause(clause.id)}
                       aria-expanded={!isCollapsed}
                       aria-label={isCollapsed ? `Expand ${clause.clauseTitle}` : `Collapse ${clause.clauseTitle}`}
-                      className="rounded-lg border border-white/[0.08] bg-white/[0.03] p-1.5 text-zinc-400 transition-colors hover:bg-white/[0.08] hover:text-zinc-100"
+                      className="rounded-lg border border-slate-200 bg-slate-50 p-1.5 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
                     >
                       {isCollapsed ? (
                         <ChevronDown className="h-4 w-4" aria-hidden="true" />
@@ -944,43 +944,43 @@ export function ResultsView({
                 {!isCollapsed && (
                   <div className="mt-5 space-y-5">
                     {/* Plain English & Why It Matters */}
-                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 border-t border-white/[0.06] pt-4">
+                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 border-t border-slate-200/80 pt-4">
                       <div>
-                        <div className="text-xs font-medium text-zinc-400">
+                        <div className="text-xs font-semibold text-slate-500">
                           {t('inSimpleLanguage')}
                         </div>
-                        <p className="mt-1.5 text-sm leading-relaxed text-zinc-200">
+                        <p className="mt-1.5 text-sm leading-relaxed text-slate-800">
                           {clause.plainEnglish}
                         </p>
                       </div>
 
                       <div>
-                        <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-400">
-                          <ShieldAlert className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+                        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+                          <ShieldAlert className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                           <span>{t('whyAttention')}</span>
                         </div>
-                        <p className="mt-1.5 text-sm leading-relaxed text-zinc-300">
+                        <p className="mt-1.5 text-sm leading-relaxed text-slate-700">
                           {clause.whyItMatters}
                         </p>
                       </div>
                     </div>
 
                     {/* Exact Original Text Evidence */}
-                    <div className="border-t border-white/[0.06] pt-4">
+                    <div className="border-t border-slate-200/80 pt-4">
                       <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-400">
-                          <Quote className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+                        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+                          <Quote className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                           <span>{t('exactSourceEvidence')}</span>
                         </div>
                         <button
                           type="button"
                           onClick={() => handleCopyQuote(clause.id, clause.exactSourceText)}
-                          className="inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
+                          className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-800 transition-colors"
                         >
                           {copiedId === clause.id ? (
                             <>
-                              <Check className="h-3.5 w-3.5 text-emerald-400" aria-hidden="true" />
-                              <span className="text-emerald-400">Copied</span>
+                              <Check className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+                              <span className="text-emerald-700 font-medium">Copied</span>
                             </>
                           ) : (
                             <>
@@ -992,20 +992,20 @@ export function ResultsView({
                       </div>
                       <blockquote
                         dir="ltr"
-                        className="rounded-lg border border-white/[0.07] bg-[#07070C] px-4 py-3 font-mono text-xs leading-relaxed text-zinc-300"
+                        className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 font-mono text-xs leading-relaxed text-slate-700"
                       >
                         “{clause.exactSourceText}”
                       </blockquote>
                     </div>
 
                     {/* Questions & Recommendation */}
-                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 border-t border-white/[0.06] pt-4">
+                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 border-t border-slate-200/80 pt-4">
                       <div>
-                        <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-400">
-                          <HelpCircle className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+                        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+                          <HelpCircle className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                           <span>{t('questionsForLandlord')}</span>
                         </div>
-                        <ul className="mt-2 space-y-1.5 text-sm text-zinc-300 list-disc pl-5">
+                        <ul className="mt-2 space-y-1.5 text-sm text-slate-700 list-disc pl-5">
                           {clause.questionsToAsk.map((q, idx) => (
                             <li key={idx} className="leading-relaxed">
                               {q}
@@ -1015,11 +1015,11 @@ export function ResultsView({
                       </div>
 
                       <div>
-                        <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-400">
-                          <Lightbulb className="h-3.5 w-3.5 text-violet-400" aria-hidden="true" />
+                        <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+                          <Lightbulb className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                           <span>{t('practicalRecommendation')}</span>
                         </div>
-                        <p className="mt-2 text-sm leading-relaxed text-zinc-300">
+                        <p className="mt-2 text-sm leading-relaxed text-slate-700">
                           {clause.recommendation}
                         </p>
                       </div>

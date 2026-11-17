@@ -274,10 +274,10 @@ export function UploadView({
     <div className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-white">
+          <h1 className="font-display text-2xl font-bold tracking-tight text-slate-900">
             {t('uploadHeading')}
           </h1>
-          <p className="mt-1 text-sm text-zinc-400">
+          <p className="mt-1 text-sm text-slate-600">
             {t('uploadSubtitle')}
           </p>
         </div>
@@ -288,9 +288,9 @@ export function UploadView({
               type="button"
               onClick={onOpenScanner}
               disabled={analyzing || extracting}
-              className="inline-flex items-center gap-2 rounded-lg border border-white/[0.12] bg-white/[0.03] px-3.5 py-2 text-xs font-medium text-zinc-200 transition-colors hover:bg-white/[0.08] disabled:opacity-50 whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-xs font-medium text-slate-700 shadow-xs transition-colors hover:bg-slate-50 disabled:opacity-50 whitespace-nowrap shrink-0"
             >
-              <ScanLine className="h-4 w-4 text-violet-400" aria-hidden="true" />
+              <ScanLine className="h-4 w-4 text-indigo-600" aria-hidden="true" />
               <span>{t('smartScannerBtn')}</span>
             </button>
           )}
@@ -298,9 +298,9 @@ export function UploadView({
             type="button"
             onClick={handleLoadDemo}
             disabled={analyzing || extracting}
-            className="inline-flex items-center gap-2 rounded-lg border border-violet-500/35 bg-violet-600/15 px-4 py-2 text-xs font-semibold text-violet-200 transition-colors hover:bg-violet-600/25 disabled:opacity-50 whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 text-xs font-semibold text-indigo-700 transition-colors hover:bg-indigo-100 disabled:opacity-50 whitespace-nowrap shrink-0"
           >
-            <Sparkles className="h-4 w-4 text-violet-400" aria-hidden="true" />
+            <Sparkles className="h-4 w-4 text-indigo-600" aria-hidden="true" />
             <span>{t('loadSampleDemo')}</span>
           </button>
         </div>
@@ -309,17 +309,17 @@ export function UploadView({
       {/* Guided 3-Step Progress Strip */}
       <nav
         aria-label="Upload and Analysis Steps"
-        className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 rounded-xl border border-white/[0.08] bg-[#0C0C14] p-3"
+        className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 rounded-xl border border-slate-200/90 bg-white p-3 shadow-xs"
       >
         <div
           className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs ${
-            hasReadyText ? 'bg-emerald-500/10 text-emerald-300' : 'bg-violet-600/15 text-violet-200'
+            hasReadyText ? 'bg-emerald-50 text-emerald-800' : 'bg-indigo-50 text-indigo-800'
           }`}
         >
           {hasReadyText ? (
-            <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" aria-hidden="true" />
+            <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" aria-hidden="true" />
           ) : (
-            <span className="font-mono font-semibold text-violet-400 shrink-0">01</span>
+            <span className="font-mono font-semibold text-indigo-600 shrink-0">01</span>
           )}
           <span className="font-medium truncate">Upload PDF / TXT or Paste Lease</span>
         </div>
@@ -327,8 +327,8 @@ export function UploadView({
         <div
           className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs ${
             hasReadyText
-              ? 'bg-violet-600/15 text-violet-200'
-              : 'text-zinc-500'
+              ? 'bg-indigo-50 text-indigo-800'
+              : 'text-slate-400'
           }`}
         >
           <span className="font-mono font-semibold shrink-0">02</span>
@@ -338,14 +338,14 @@ export function UploadView({
         <div
           className={`flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs ${
             analyzing
-              ? 'bg-violet-600/20 text-violet-200'
+              ? 'bg-indigo-50 text-indigo-800'
               : hasReadyText
-              ? 'text-zinc-200'
-              : 'text-zinc-500'
+              ? 'text-slate-700'
+              : 'text-slate-400'
           }`}
         >
           {analyzing ? (
-            <Loader2 className="h-4 w-4 animate-spin text-violet-400 shrink-0" aria-hidden="true" />
+            <Loader2 className="h-4 w-4 animate-spin text-indigo-600 shrink-0" aria-hidden="true" />
           ) : (
             <span className="font-mono font-semibold shrink-0">03</span>
           )}
@@ -359,12 +359,12 @@ export function UploadView({
       {errorMessage && (
         <div
           role="alert"
-          className="flex items-start gap-3 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-200"
+          className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800"
         >
-          <AlertTriangle className="h-5 w-5 text-red-400 shrink-0 mt-0.5" aria-hidden="true" />
+          <AlertTriangle className="h-5 w-5 text-red-600 shrink-0 mt-0.5" aria-hidden="true" />
           <div>
-            <div className="font-medium text-red-300">Document or Analysis Issue</div>
-            <p className="mt-0.5 text-red-200/90">{errorMessage}</p>
+            <div className="font-semibold text-red-900">Document or Analysis Issue</div>
+            <p className="mt-0.5 text-red-700">{errorMessage}</p>
           </div>
         </div>
       )}
@@ -373,18 +373,18 @@ export function UploadView({
       {extractionWarning && (
         <div
           role="status"
-          className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between rounded-xl border border-orange-500/30 bg-orange-500/10 p-4 text-sm text-orange-200"
+          className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900"
         >
           <div className="flex items-start gap-3">
             <AlertTriangle
-              className="h-5 w-5 text-orange-400 shrink-0 mt-0.5"
+              className="h-5 w-5 text-amber-600 shrink-0 mt-0.5"
               aria-hidden="true"
             />
             <div>
-              <div className="font-medium text-orange-300">
+              <div className="font-semibold text-amber-900">
                 Unreadable or Scanned PDF Detected
               </div>
-              <p className="mt-0.5 text-orange-200/90">{extractionWarning}</p>
+              <p className="mt-0.5 text-amber-800">{extractionWarning}</p>
             </div>
           </div>
           {lastUploadedFile && (
@@ -392,7 +392,7 @@ export function UploadView({
               type="button"
               onClick={() => void handleRescueScannedPdf()}
               disabled={ocrScanning}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-violet-600 px-4 py-2 text-xs font-semibold text-white hover:bg-violet-500 disabled:opacity-50 whitespace-nowrap shrink-0"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-xs font-semibold text-white hover:bg-indigo-700 disabled:opacity-50 whitespace-nowrap shrink-0"
             >
               {ocrScanning ? (
                 <>
@@ -421,10 +421,10 @@ export function UploadView({
             }}
             onDragLeave={() => setDragActive(false)}
             onDrop={handleDrop}
-            className={`rounded-xl border border-dashed p-6 text-center transition-colors ${
+            className={`rounded-xl border border-dashed p-6 text-center shadow-xs transition-colors ${
               dragActive
-                ? 'border-violet-400 bg-violet-500/10'
-                : 'border-white/[0.15] bg-[#0C0C14] hover:border-violet-500/50'
+                ? 'border-indigo-500 bg-indigo-50/70'
+                : 'border-slate-300 bg-white hover:border-indigo-400'
             }`}
           >
             <input
@@ -435,7 +435,7 @@ export function UploadView({
               className="hidden"
             />
 
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-violet-500/30 bg-violet-600/15 text-violet-400">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-indigo-200 bg-indigo-50 text-indigo-600">
               {extracting ? (
                 <Loader2 className="h-6 w-6 animate-spin" aria-hidden="true" />
               ) : (
@@ -443,10 +443,10 @@ export function UploadView({
               )}
             </div>
 
-            <h2 className="mt-4 font-display text-base font-semibold text-white">
+            <h2 className="mt-4 font-display text-base font-semibold text-slate-900">
               {extracting ? 'Extracting Document Text...' : 'Drop PDF or TXT Agreement Here'}
             </h2>
-            <p className="mt-1.5 text-xs text-zinc-400 max-w-xs mx-auto">
+            <p className="mt-1.5 text-xs text-slate-500 max-w-xs mx-auto">
               Supports text-based PDFs and UTF-8 plain text files up to 10 MB. Scanned PDFs are flagged automatically.
             </p>
 
@@ -455,24 +455,24 @@ export function UploadView({
                 type="button"
                 disabled={extracting || analyzing}
                 onClick={() => fileInputRef.current?.click()}
-                className="inline-flex items-center gap-2 rounded-lg border border-white/[0.12] bg-white/[0.04] px-4 py-2 text-xs font-medium text-zinc-100 transition-colors hover:bg-white/[0.08] disabled:opacity-50"
+                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-100 disabled:opacity-50"
               >
-                <Upload className="h-3.5 w-3.5" aria-hidden="true" />
+                <Upload className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>Choose File</span>
               </button>
             </div>
           </div>
 
           {/* Analysis Configuration */}
-          <div className="rounded-xl border border-white/[0.08] bg-[#0C0C14] p-5 space-y-4">
-            <h2 className="font-display text-sm font-semibold text-white">
+          <div className="rounded-xl border border-slate-200/90 bg-white p-5 shadow-xs space-y-4">
+            <h2 className="font-display text-sm font-semibold text-slate-900">
               {t('analysisSettings')}
             </h2>
 
             <div>
               <label
                 htmlFor="agreement-title"
-                className="block text-xs font-medium text-zinc-400 mb-1.5"
+                className="block text-xs font-medium text-slate-600 mb-1.5"
               >
                 {t('agreementTitle')}
               </label>
@@ -482,14 +482,14 @@ export function UploadView({
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="e.g., Sunset Apartments 12-Month Lease"
-                className="w-full rounded-lg border border-white/[0.1] bg-[#07070C] px-3 py-2 text-sm text-zinc-100 placeholder-zinc-600 focus:border-violet-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:bg-white focus:outline-none"
               />
             </div>
 
             <div>
               <label
                 htmlFor="rulebook-select"
-                className="block text-xs font-medium text-zinc-400 mb-1.5"
+                className="block text-xs font-medium text-slate-600 mb-1.5"
               >
                 {t('rulebookVersion')}
               </label>
@@ -497,7 +497,7 @@ export function UploadView({
                 id="rulebook-select"
                 value={selectedRulebookId}
                 onChange={(e) => setSelectedRulebookId(e.target.value)}
-                className="w-full rounded-lg border border-white/[0.1] bg-[#07070C] px-3 py-2 text-sm text-zinc-100 focus:border-violet-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
               >
                 {rulebooks.map((rb) => (
                   <option key={rb.id} value={rb.id}>
@@ -506,7 +506,7 @@ export function UploadView({
                 ))}
               </select>
               {activeRulebook && (
-                <p className="mt-1.5 text-xs text-zinc-500 leading-relaxed">
+                <p className="mt-1.5 text-xs text-slate-500 leading-relaxed">
                   {activeRulebook.description}
                 </p>
               )}
@@ -515,7 +515,7 @@ export function UploadView({
             <div>
               <label
                 htmlFor="output-language-select"
-                className="block text-xs font-medium text-zinc-400 mb-1.5"
+                className="block text-xs font-medium text-slate-600 mb-1.5"
               >
                 {t('outputLanguageLabel')}
               </label>
@@ -523,7 +523,7 @@ export function UploadView({
                 id="output-language-select"
                 value={outputLangCode}
                 onChange={(e) => setOutputLangCode(e.target.value)}
-                className="w-full rounded-lg border border-white/[0.1] bg-[#07070C] px-3 py-2 text-sm text-zinc-100 focus:border-violet-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
               >
                 {SUPPORTED_LANGUAGES.map((lang) => (
                   <option key={lang.code} value={lang.code}>
@@ -543,7 +543,7 @@ export function UploadView({
                   value={outputCustomLang}
                   onChange={(e) => setOutputCustomLang(e.target.value)}
                   placeholder={t('customLanguagePlaceholder')}
-                  className="mt-2 w-full rounded-lg border border-white/[0.12] bg-[#07070C] px-3 py-2 text-xs text-zinc-100 placeholder-zinc-500 focus:border-violet-500 focus:outline-none"
+                  className="mt-2 w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:bg-white focus:outline-none"
                 />
               )}
             </div>
@@ -552,7 +552,7 @@ export function UploadView({
               type="button"
               disabled={analyzing || extracting || !hasReadyText}
               onClick={handleAnalyze}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-violet-950/50 transition-colors hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-50"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {analyzing ? (
                 <>
@@ -568,7 +568,7 @@ export function UploadView({
             </button>
 
             {!hasReadyText && !analyzing && (
-              <p className="text-[11px] text-zinc-400 leading-relaxed">
+              <p className="text-[11px] text-slate-500 leading-relaxed">
                 Next step: upload a PDF/TXT file, use Smart Agreement Scanner for paper photos, or click Load Sample Demo above.
               </p>
             )}
@@ -576,7 +576,7 @@ export function UploadView({
             {analyzing && (
               <div
                 aria-live="polite"
-                className="rounded-lg border border-violet-500/25 bg-violet-950/15 p-3.5 space-y-2"
+                className="rounded-lg border border-indigo-200 bg-indigo-50/70 p-3.5 space-y-2"
               >
                 {ANALYSIS_STAGES.map((stage, idx) => {
                   const done = idx < analysisStageIdx;
@@ -586,18 +586,18 @@ export function UploadView({
                       key={stage}
                       className={`flex items-center gap-2 text-xs ${
                         done
-                          ? 'text-emerald-300'
+                          ? 'text-emerald-700'
                           : current
-                          ? 'text-violet-200 font-medium'
-                          : 'text-zinc-500'
+                          ? 'text-indigo-700 font-medium'
+                          : 'text-slate-400'
                       }`}
                     >
                       {done ? (
-                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" aria-hidden="true" />
+                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" aria-hidden="true" />
                       ) : current ? (
-                        <Loader2 className="h-3.5 w-3.5 animate-spin text-violet-400 shrink-0" aria-hidden="true" />
+                        <Loader2 className="h-3.5 w-3.5 animate-spin text-indigo-600 shrink-0" aria-hidden="true" />
                       ) : (
-                        <Circle className="h-3.5 w-3.5 text-zinc-600 shrink-0" aria-hidden="true" />
+                        <Circle className="h-3.5 w-3.5 text-slate-300 shrink-0" aria-hidden="true" />
                       )}
                       <span>{stage}</span>
                     </div>
@@ -606,28 +606,28 @@ export function UploadView({
               </div>
             )}
 
-            <p className="text-[11px] text-zinc-500 leading-relaxed">
+            <p className="text-[11px] text-slate-500 leading-relaxed">
               Analysis runs securely on the server. Findings provide informational guidance only and are not legal advice.
             </p>
           </div>
         </div>
 
         {/* Right column: Extracted Text Review */}
-        <div className="xl:col-span-7 flex flex-col rounded-xl border border-white/[0.08] bg-[#0C0C14]">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.07] px-5 py-3.5">
+        <div className="xl:col-span-7 flex flex-col rounded-xl border border-slate-200/90 bg-white shadow-xs">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 px-5 py-3.5">
             <div className="flex items-center gap-2.5">
-              <FileText className="h-4 w-4 text-violet-400" aria-hidden="true" />
-              <span className="font-display text-sm font-semibold text-white">
+              <FileText className="h-4 w-4 text-indigo-600" aria-hidden="true" />
+              <span className="font-display text-sm font-semibold text-slate-900">
                 {t('extractedTextTitle')}
               </span>
               {isDemo && (
-                <span className="text-xs font-medium text-violet-400">
+                <span className="text-xs font-semibold text-indigo-600">
                   · Sample Demo Document
                 </span>
               )}
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-zinc-400 tabular-nums">
+            <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-slate-500 tabular-nums">
               {fileName && <span>{fileName}</span>}
               {pageCount !== undefined && (
                 <>
@@ -652,14 +652,14 @@ export function UploadView({
                   }
                   className={`inline-flex items-center gap-1 rounded-md border px-2 py-1 font-sans text-[11px] font-medium transition-colors whitespace-nowrap ${
                     activeItemId === 'upload-extracted-text' && audioStatus !== 'idle'
-                      ? 'border-violet-500 bg-violet-600 text-white'
-                      : 'border-white/[0.1] bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08]'
+                      ? 'border-indigo-600 bg-indigo-600 text-white'
+                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
                   }`}
                 >
                   {activeItemId === 'upload-extracted-text' && audioStatus !== 'idle' ? (
                     <Square className="h-3 w-3" aria-hidden="true" />
                   ) : (
-                    <Volume2 className="h-3 w-3 text-violet-400" aria-hidden="true" />
+                    <Volume2 className="h-3 w-3 text-indigo-600" aria-hidden="true" />
                   )}
                   <span>
                     {activeItemId === 'upload-extracted-text' && audioStatus !== 'idle'
@@ -673,7 +673,7 @@ export function UploadView({
                   type="button"
                   onClick={handleReset}
                   disabled={analyzing || extracting}
-                  className="inline-flex items-center gap-1 rounded-md border border-white/[0.1] bg-white/[0.03] px-2 py-1 font-sans text-[11px] font-medium text-zinc-300 transition-colors hover:bg-white/[0.08] disabled:opacity-50"
+                  className="inline-flex items-center gap-1 rounded-md border border-slate-200 bg-slate-50 px-2 py-1 font-sans text-[11px] font-medium text-slate-700 transition-colors hover:bg-slate-100 disabled:opacity-50"
                 >
                   <RotateCcw className="h-3 w-3" aria-hidden="true" />
                   <span>{t('clearBtn')}</span>
@@ -695,7 +695,7 @@ export function UploadView({
               }}
               placeholder="Extracted text from your uploaded PDF or TXT file will appear here for review. You can also paste rental agreement text directly..."
               rows={18}
-              className="w-full flex-1 min-h-[400px] resize-y rounded-lg border border-white/[0.08] bg-[#07070C] p-4 font-mono text-xs sm:text-[13px] leading-relaxed text-zinc-200 placeholder-zinc-600 focus:border-violet-500 focus:outline-none"
+              className="w-full flex-1 min-h-[400px] resize-y rounded-lg border border-slate-200 bg-slate-50 p-4 font-mono text-xs sm:text-[13px] leading-relaxed text-slate-800 placeholder-slate-400 focus:border-indigo-500 focus:bg-white focus:outline-none"
             />
           </div>
         </div>

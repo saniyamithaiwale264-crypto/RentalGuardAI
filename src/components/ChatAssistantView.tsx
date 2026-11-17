@@ -136,12 +136,12 @@ export function ChatAssistantView({
 
   if (!activeAnalysis) {
     return (
-      <div className="rounded-xl border border-white/[0.08] bg-[#0C0C14] p-10 text-center space-y-2">
-        <MessageSquareText className="h-8 w-8 text-violet-400 mx-auto" aria-hidden="true" />
-        <h1 className="font-display text-lg font-semibold text-white">
+      <div className="rounded-xl border border-slate-200/90 bg-white p-10 text-center shadow-xs space-y-2">
+        <MessageSquareText className="h-8 w-8 text-indigo-600 mx-auto" aria-hidden="true" />
+        <h1 className="font-display text-lg font-semibold text-slate-900">
           No Analyzed Agreement Selected
         </h1>
-        <p className="text-sm text-zinc-400">
+        <p className="text-sm text-slate-600">
           Upload and analyze a rental agreement first, or load the Sample Demo Lease from the Dashboard.
         </p>
       </div>
@@ -153,10 +153,10 @@ export function ChatAssistantView({
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-white">
+          <h1 className="font-display text-2xl font-bold tracking-tight text-slate-900">
             {t('chatHeading')}
           </h1>
-          <p className="mt-1 text-sm text-zinc-400">
+          <p className="mt-1 text-sm text-slate-600">
             {t('chatSubtitle')} ({displayLanguage})
           </p>
         </div>
@@ -165,7 +165,7 @@ export function ChatAssistantView({
           <div className="flex-1 sm:w-80">
             <label
               htmlFor="chat-agreement-select"
-              className="block text-xs font-medium text-zinc-400 mb-1"
+              className="block text-xs font-medium text-slate-600 mb-1"
             >
               Active Agreement Context
             </label>
@@ -176,7 +176,7 @@ export function ChatAssistantView({
                 setSelectedAnalysisId(e.target.value);
                 setErrorMsg(null);
               }}
-              className="w-full rounded-lg border border-white/[0.1] bg-[#0C0C14] px-3 py-2 text-xs text-zinc-100 focus:border-violet-500 focus:outline-none"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 focus:border-indigo-500 focus:outline-none"
             >
               {analyses.map((a) => (
                 <option key={a.id} value={a.id}>
@@ -195,7 +195,7 @@ export function ChatAssistantView({
                   [activeAnalysis.id]: [],
                 }))
               }
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/[0.1] bg-[#0C0C14] px-3 py-2 text-xs font-medium text-zinc-300 hover:bg-white/[0.06] whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 whitespace-nowrap"
             >
               <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
               <span>{t('clearBtn')}</span>
@@ -205,39 +205,39 @@ export function ChatAssistantView({
       </div>
 
       {/* Informational Notice */}
-      <div className="flex items-start gap-3 rounded-xl border border-violet-500/25 bg-violet-950/15 px-4 py-3 text-xs text-zinc-300">
-        <Info className="h-4 w-4 text-violet-400 shrink-0 mt-0.5" aria-hidden="true" />
+      <div className="flex items-start gap-3 rounded-xl border border-indigo-200 bg-indigo-50/75 px-4 py-3 text-xs text-slate-700">
+        <Info className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" aria-hidden="true" />
         <p className="leading-relaxed">
-          <span className="font-semibold text-white">Document-Grounded Q&amp;A (Not Legal Advice):</span>{' '}
+          <span className="font-semibold text-slate-900">Document-Grounded Q&amp;A (Not Legal Advice):</span>{' '}
           Responses are strictly based on{' '}
-          <span className="text-violet-200 font-medium">{activeAnalysis.fileName}</span>.
+          <span className="text-indigo-700 font-semibold">{activeAnalysis.fileName}</span>.
           {activeAnalysis.isSampleResult &&
             ' You are currently chatting with the Sample Demo Lease.'}
         </p>
       </div>
 
       {/* Chat Container */}
-      <section className="flex flex-col rounded-xl border border-white/[0.08] bg-[#0C0C14] min-h-[520px] max-h-[680px]">
+      <section className="flex flex-col rounded-xl border border-slate-200/90 bg-white shadow-xs min-h-[520px] max-h-[680px]">
         {/* Message Feed */}
         <div className="flex-1 overflow-y-auto p-5 space-y-5">
           {messages.length === 0 ? (
             <div className="py-6 space-y-5">
               <div className="flex items-start gap-3 max-w-2xl">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-violet-500/35 bg-violet-600/15 text-violet-400">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-indigo-200 bg-indigo-50 text-indigo-600">
                   <Bot className="h-4 w-4" aria-hidden="true" />
                 </div>
                 <div className="space-y-1.5">
-                  <div className="text-xs font-medium text-violet-300">
+                  <div className="text-xs font-semibold text-indigo-700">
                     RentalGuard AI Assistant
                   </div>
-                  <p className="text-sm text-zinc-300 leading-relaxed">
-                    I have the full text of <span className="text-white font-medium">{activeAnalysis.title}</span> ready. Ask any question about rent, deposits, lock-in penalties, repairs, notice periods, or guest rules—I will show the exact clause supporting every answer.
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    I have the full text of <span className="text-slate-900 font-semibold">{activeAnalysis.title}</span> ready. Ask any question about rent, deposits, lock-in penalties, repairs, notice periods, or guest rules—I will show the exact clause supporting every answer.
                   </p>
                 </div>
               </div>
 
               <div className="pl-11 space-y-2">
-                <div className="text-xs font-medium text-zinc-400">
+                <div className="text-xs font-medium text-slate-500">
                   Try asking one of these questions:
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -246,7 +246,7 @@ export function ChatAssistantView({
                       key={q}
                       type="button"
                       onClick={() => void askQuestion(q)}
-                      className="rounded-lg border border-white/[0.1] bg-[#07070C] px-3 py-2 text-left text-xs text-zinc-200 transition-colors hover:border-violet-500/40 hover:bg-violet-600/10"
+                      className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs text-slate-700 transition-colors hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-900"
                     >
                       {q}
                     </button>
@@ -263,7 +263,7 @@ export function ChatAssistantView({
                 }`}
               >
                 {msg.role === 'assistant' && (
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-violet-500/35 bg-violet-600/15 text-violet-400">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-indigo-200 bg-indigo-50 text-indigo-600">
                     <Bot className="h-4 w-4" aria-hidden="true" />
                   </div>
                 )}
@@ -271,27 +271,27 @@ export function ChatAssistantView({
                 <div
                   className={`max-w-3xl space-y-3 rounded-xl px-4 py-3.5 text-sm ${
                     msg.role === 'user'
-                      ? 'bg-violet-600/20 border border-violet-500/35 text-zinc-100'
-                      : 'bg-[#07070C] border border-white/[0.08] text-zinc-200'
+                      ? 'bg-indigo-50 border border-indigo-200 text-slate-900'
+                      : 'bg-slate-50 border border-slate-200/90 text-slate-800'
                   }`}
                 >
                   <p className="leading-relaxed whitespace-pre-wrap">{msg.content}</p>
 
                   {msg.supportingClauses && msg.supportingClauses.length > 0 && (
-                    <div className="space-y-2 border-t border-white/[0.07] pt-3">
-                      <div className="flex items-center gap-1.5 text-xs font-medium text-violet-300">
+                    <div className="space-y-2 border-t border-slate-200 pt-3">
+                      <div className="flex items-center gap-1.5 text-xs font-semibold text-indigo-700">
                         <Quote className="h-3.5 w-3.5" aria-hidden="true" />
                         <span>Supporting Clause References</span>
                       </div>
                       {msg.supportingClauses.map((sc, i) => (
                         <div
                           key={i}
-                          className="rounded-lg border border-white/[0.07] bg-[#0C0C14] p-3 space-y-1"
+                          className="rounded-lg border border-slate-200 bg-white p-3 space-y-1"
                         >
-                          <div className="text-xs font-medium text-zinc-300">
+                          <div className="text-xs font-semibold text-slate-800">
                             {sc.clauseTitle}
                           </div>
-                          <blockquote className="font-mono text-xs text-zinc-400 leading-relaxed">
+                          <blockquote className="font-mono text-xs text-slate-600 leading-relaxed">
                             “{sc.exactQuote}”
                           </blockquote>
                         </div>
@@ -300,7 +300,7 @@ export function ChatAssistantView({
                   )}
 
                   {msg.disclaimerNote && (
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] text-zinc-500 border-t border-white/[0.05] pt-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-500 border-t border-slate-200/80 pt-2">
                       <span>{msg.disclaimerNote}</span>
                       {msg.role === 'assistant' && (
                         <button
@@ -315,14 +315,14 @@ export function ChatAssistantView({
                           }
                           className={`inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[11px] font-medium transition-colors whitespace-nowrap ${
                             activeItemId === `chat-${msg.id}` && audioStatus !== 'idle'
-                              ? 'border-violet-500 bg-violet-600 text-white'
-                              : 'border-white/[0.1] bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08]'
+                              ? 'border-indigo-600 bg-indigo-600 text-white'
+                              : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100'
                           }`}
                         >
                           {activeItemId === `chat-${msg.id}` && audioStatus !== 'idle' ? (
                             <Square className="h-3 w-3" aria-hidden="true" />
                           ) : (
-                            <Volume2 className="h-3 w-3 text-violet-400" aria-hidden="true" />
+                            <Volume2 className="h-3 w-3 text-indigo-600" aria-hidden="true" />
                           )}
                           <span>
                             {activeItemId === `chat-${msg.id}` && audioStatus !== 'idle'
@@ -335,7 +335,7 @@ export function ChatAssistantView({
                   )}
 
                   {!msg.disclaimerNote && msg.role === 'assistant' && (
-                    <div className="flex justify-end border-t border-white/[0.05] pt-2">
+                    <div className="flex justify-end border-t border-slate-200/80 pt-2">
                       <button
                         type="button"
                         onClick={() =>
@@ -348,14 +348,14 @@ export function ChatAssistantView({
                         }
                         className={`inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[11px] font-medium transition-colors whitespace-nowrap ${
                           activeItemId === `chat-${msg.id}` && audioStatus !== 'idle'
-                            ? 'border-violet-500 bg-violet-600 text-white'
-                            : 'border-white/[0.1] bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08]'
+                            ? 'border-indigo-600 bg-indigo-600 text-white'
+                            : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100'
                         }`}
                       >
                         {activeItemId === `chat-${msg.id}` && audioStatus !== 'idle' ? (
                           <Square className="h-3 w-3" aria-hidden="true" />
                         ) : (
-                          <Volume2 className="h-3 w-3 text-violet-400" aria-hidden="true" />
+                          <Volume2 className="h-3 w-3 text-indigo-600" aria-hidden="true" />
                         )}
                         <span>
                           {activeItemId === `chat-${msg.id}` && audioStatus !== 'idle'
@@ -368,7 +368,7 @@ export function ChatAssistantView({
                 </div>
 
                 {msg.role === 'user' && (
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.12] bg-white/[0.04] text-zinc-300">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-100 text-slate-600">
                     <User className="h-4 w-4" aria-hidden="true" />
                   </div>
                 )}
@@ -378,11 +378,11 @@ export function ChatAssistantView({
 
           {sending && (
             <div className="flex items-start gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-violet-500/35 bg-violet-600/15 text-violet-400">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-indigo-200 bg-indigo-50 text-indigo-600">
                 <Bot className="h-4 w-4" aria-hidden="true" />
               </div>
-              <div className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-[#07070C] px-4 py-3 text-xs text-zinc-300">
-                <Loader2 className="h-4 w-4 animate-spin text-violet-400" aria-hidden="true" />
+              <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs text-slate-600">
+                <Loader2 className="h-4 w-4 animate-spin text-indigo-600" aria-hidden="true" />
                 <span>Reading agreement clauses...</span>
               </div>
             </div>
@@ -391,9 +391,9 @@ export function ChatAssistantView({
           {errorMsg && (
             <div
               role="alert"
-              className="flex items-start gap-2.5 rounded-xl border border-red-500/30 bg-red-500/10 p-3.5 text-xs text-red-200"
+              className="flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 p-3.5 text-xs text-red-800"
             >
-              <AlertCircle className="h-4 w-4 text-red-400 shrink-0 mt-0.5" aria-hidden="true" />
+              <AlertCircle className="h-4 w-4 text-red-600 shrink-0 mt-0.5" aria-hidden="true" />
               <span>{errorMsg}</span>
             </div>
           )}
@@ -404,7 +404,7 @@ export function ChatAssistantView({
         {/* Input Form */}
         <form
           onSubmit={handleSubmit}
-          className="border-t border-white/[0.08] p-4 flex items-center gap-3 bg-[#09090F] rounded-b-xl"
+          className="border-t border-slate-200/80 p-4 flex items-center gap-3 bg-slate-50/70 rounded-b-xl"
         >
           <input
             type="text"
@@ -412,12 +412,12 @@ export function ChatAssistantView({
             onChange={(e) => setInput(e.target.value)}
             placeholder={t('chatPlaceholder')}
             disabled={sending}
-            className="flex-1 rounded-lg border border-white/[0.1] bg-[#06060A] px-3.5 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:border-violet-500 focus:outline-none disabled:opacity-60"
+            className="flex-1 rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:outline-none disabled:opacity-60"
           />
           <button
             type="submit"
             disabled={sending || !input.trim()}
-            className="inline-flex items-center gap-2 rounded-lg bg-violet-600 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-violet-500 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap shrink-0"
           >
             <Send className="h-3.5 w-3.5" aria-hidden="true" />
             <span>{t('askAi')}</span>

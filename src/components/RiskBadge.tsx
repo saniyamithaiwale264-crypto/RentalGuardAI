@@ -13,7 +13,7 @@ export function RiskBadge({ level, compact = false }: RiskBadgeProps) {
   if (level === 'HIGH') {
     return (
       <span
-        className={`inline-flex items-center gap-1.5 rounded-md border border-red-500/30 bg-red-500/10 font-medium text-red-400 whitespace-nowrap shrink-0 ${
+        className={`inline-flex items-center gap-1.5 rounded-md border border-red-200 bg-red-50 font-medium text-red-700 whitespace-nowrap shrink-0 ${
           compact ? 'px-2 py-0.5 text-xs' : 'px-2.5 py-1 text-xs'
         }`}
       >
@@ -26,7 +26,7 @@ export function RiskBadge({ level, compact = false }: RiskBadgeProps) {
   if (level === 'MEDIUM') {
     return (
       <span
-        className={`inline-flex items-center gap-1.5 rounded-md border border-orange-500/30 bg-orange-500/10 font-medium text-orange-400 whitespace-nowrap shrink-0 ${
+        className={`inline-flex items-center gap-1.5 rounded-md border border-amber-200 bg-amber-50 font-medium text-amber-800 whitespace-nowrap shrink-0 ${
           compact ? 'px-2 py-0.5 text-xs' : 'px-2.5 py-1 text-xs'
         }`}
       >
@@ -38,7 +38,7 @@ export function RiskBadge({ level, compact = false }: RiskBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-md border border-emerald-500/30 bg-emerald-500/10 font-medium text-emerald-400 whitespace-nowrap shrink-0 ${
+      className={`inline-flex items-center gap-1.5 rounded-md border border-emerald-200 bg-emerald-50 font-medium text-emerald-700 whitespace-nowrap shrink-0 ${
         compact ? 'px-2 py-0.5 text-xs' : 'px-2.5 py-1 text-xs'
       }`}
     >

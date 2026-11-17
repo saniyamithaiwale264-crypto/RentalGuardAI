@@ -282,23 +282,23 @@ export function SmartScannerModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="smart-scanner-heading"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4"
     >
-      <div className="relative flex max-h-[92vh] w-full max-w-4xl flex-col rounded-xl border border-white/[0.12] bg-[#0C0C14] shadow-2xl">
+      <div className="relative flex max-h-[92vh] w-full max-w-4xl flex-col rounded-xl border border-slate-200 bg-white shadow-2xl">
         {/* Modal Header */}
-        <div className="flex items-start justify-between gap-4 border-b border-white/[0.08] px-6 py-4">
+        <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-6 py-4">
           <div className="flex items-start gap-3">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-violet-500/35 bg-violet-600/15 text-violet-400">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-indigo-200 bg-indigo-50 text-indigo-600">
               <ScanLine className="h-4.5 w-4.5" aria-hidden="true" />
             </div>
             <div>
               <h2
                 id="smart-scanner-heading"
-                className="font-display text-lg font-semibold text-white"
+                className="font-display text-lg font-semibold text-slate-900"
               >
                 {t('smartScannerTitle')}
               </h2>
-              <p className="text-xs text-zinc-400 mt-0.5">{t('smartScannerSubtitle')}</p>
+              <p className="text-xs text-slate-500 mt-0.5">{t('smartScannerSubtitle')}</p>
             </div>
           </div>
 
@@ -307,7 +307,7 @@ export function SmartScannerModal({
             onClick={onClose}
             disabled={scanning || analyzing}
             aria-label="Close Smart Agreement Scanner"
-            className="rounded-lg p-1.5 text-zinc-400 hover:bg-white/[0.06] hover:text-zinc-100 disabled:opacity-50"
+            className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 disabled:opacity-50"
           >
             <X className="h-5 w-5" aria-hidden="true" />
           </button>
@@ -318,23 +318,23 @@ export function SmartScannerModal({
           {errorMsg && (
             <div
               role="alert"
-              className="flex items-start gap-2.5 rounded-xl border border-red-500/30 bg-red-500/10 p-3.5 text-xs text-red-200"
+              className="flex items-start gap-2.5 rounded-xl border border-red-200 bg-red-50 p-3.5 text-xs text-red-800"
             >
-              <AlertTriangle className="h-4 w-4 text-red-400 shrink-0 mt-0.5" aria-hidden="true" />
+              <AlertTriangle className="h-4 w-4 text-red-600 shrink-0 mt-0.5" aria-hidden="true" />
               <span>{errorMsg}</span>
             </div>
           )}
 
           {/* Mode Toggle */}
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="inline-flex items-center gap-1 rounded-lg border border-white/[0.08] bg-[#07070C] p-1">
+            <div className="inline-flex items-center gap-1 rounded-lg border border-slate-200 bg-slate-50 p-1">
               <button
                 type="button"
                 onClick={() => handleModeSwitch('upload')}
                 className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors whitespace-nowrap ${
                   mode === 'upload'
-                    ? 'bg-violet-600 text-white'
-                    : 'text-zinc-400 hover:text-zinc-100'
+                    ? 'bg-indigo-600 text-white'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <ImagePlus className="h-3.5 w-3.5" aria-hidden="true" />
@@ -345,8 +345,8 @@ export function SmartScannerModal({
                 onClick={() => handleModeSwitch('camera')}
                 className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors whitespace-nowrap ${
                   mode === 'camera'
-                    ? 'bg-violet-600 text-white'
-                    : 'text-zinc-400 hover:text-zinc-100'
+                    ? 'bg-indigo-600 text-white'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <Camera className="h-3.5 w-3.5" aria-hidden="true" />
@@ -354,7 +354,7 @@ export function SmartScannerModal({
               </button>
             </div>
 
-            <span className="font-mono text-xs text-zinc-400 tabular-nums">
+            <span className="font-mono text-xs text-slate-500 tabular-nums">
               {pages.length} / 6 pages queued
             </span>
           </div>
@@ -367,7 +367,7 @@ export function SmartScannerModal({
                 e.preventDefault();
                 queueFiles(Array.from(e.dataTransfer.files));
               }}
-              className="rounded-xl border border-dashed border-white/[0.15] bg-[#07070C] p-6 text-center hover:border-violet-500/45 transition-colors"
+              className="rounded-xl border border-dashed border-slate-300 bg-slate-50/70 p-6 text-center hover:border-indigo-400 transition-colors"
             >
               <input
                 ref={fileInputRef}
@@ -382,31 +382,31 @@ export function SmartScannerModal({
                 }}
                 className="hidden"
               />
-              <Upload className="h-7 w-7 text-violet-400 mx-auto" aria-hidden="true" />
-              <div className="mt-3 text-sm font-medium text-white">
+              <Upload className="h-7 w-7 text-indigo-600 mx-auto" aria-hidden="true" />
+              <div className="mt-3 text-sm font-medium text-slate-900">
                 Drop lease page photos or scanned PDFs here
               </div>
-              <p className="mt-1 text-xs text-zinc-400">
+              <p className="mt-1 text-xs text-slate-500">
                 Supports PNG, JPG, WEBP camera photos and scanned PDF files (up to 6 pages, any language).
               </p>
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={pages.length >= 6 || scanning}
-                className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/[0.12] bg-white/[0.04] px-4 py-2 text-xs font-medium text-zinc-100 hover:bg-white/[0.08] disabled:opacity-50"
+                className="mt-4 inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
               >
-                <ImagePlus className="h-3.5 w-3.5" aria-hidden="true" />
+                <ImagePlus className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>Choose Images or PDF</span>
               </button>
             </div>
           ) : (
-            <div className="rounded-xl border border-white/[0.08] bg-[#07070C] p-4 space-y-3">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 space-y-3">
               {cameraError ? (
-                <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-xs text-orange-200">
+                <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-xs text-amber-800">
                   {cameraError}
                 </div>
               ) : (
-                <div className="relative overflow-hidden rounded-lg bg-black aspect-video max-h-72 flex items-center justify-center">
+                <div className="relative overflow-hidden rounded-lg bg-slate-950 aspect-video max-h-72 flex items-center justify-center">
                   <video
                     ref={videoRef}
                     playsInline
@@ -414,7 +414,7 @@ export function SmartScannerModal({
                     className="h-full w-full object-contain"
                   />
                   {!cameraActive && (
-                    <div className="absolute inset-0 flex items-center justify-center text-xs text-zinc-400">
+                    <div className="absolute inset-0 flex items-center justify-center text-xs text-slate-300">
                       Starting camera preview...
                     </div>
                   )}
@@ -422,7 +422,7 @@ export function SmartScannerModal({
               )}
 
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="text-xs text-zinc-400">
+                <span className="text-xs text-slate-500">
                   Hold each lease page flat in bright lighting, then capture.
                 </span>
                 <div className="flex items-center gap-2">
@@ -430,7 +430,7 @@ export function SmartScannerModal({
                     <button
                       type="button"
                       onClick={() => void startCamera()}
-                      className="rounded-lg border border-white/[0.12] bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-zinc-200 hover:bg-white/[0.08]"
+                      className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50"
                     >
                       Retry Camera
                     </button>
@@ -439,7 +439,7 @@ export function SmartScannerModal({
                     type="button"
                     onClick={handleCaptureFrame}
                     disabled={!cameraActive || pages.length >= 6}
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-violet-600 px-4 py-1.5 text-xs font-semibold text-white hover:bg-violet-500 disabled:opacity-50"
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-4 py-1.5 text-xs font-semibold text-white hover:bg-indigo-700 disabled:opacity-50"
                   >
                     <Camera className="h-3.5 w-3.5" aria-hidden="true" />
                     <span>Capture Page</span>
@@ -456,9 +456,9 @@ export function SmartScannerModal({
                 {pages.map((p, idx) => (
                   <div
                     key={p.id}
-                    className="relative rounded-lg border border-white/[0.1] bg-[#07070C] p-2 flex flex-col gap-1.5"
+                    className="relative rounded-lg border border-slate-200 bg-slate-50 p-2 flex flex-col gap-1.5"
                   >
-                    <div className="aspect-[4/3] overflow-hidden rounded bg-[#0C0C14] flex items-center justify-center">
+                    <div className="aspect-[4/3] overflow-hidden rounded bg-white border border-slate-200/70 flex items-center justify-center">
                       {p.previewUrl ? (
                         <img
                           src={p.previewUrl}
@@ -466,16 +466,16 @@ export function SmartScannerModal({
                           className="h-full w-full object-cover"
                         />
                       ) : (
-                        <FileText className="h-6 w-6 text-violet-400" aria-hidden="true" />
+                        <FileText className="h-6 w-6 text-indigo-600" aria-hidden="true" />
                       )}
                     </div>
-                    <div className="flex items-center justify-between gap-1 text-[11px] text-zinc-300">
+                    <div className="flex items-center justify-between gap-1 text-[11px] text-slate-700">
                       <span className="truncate font-mono">P{idx + 1} · {p.file.name}</span>
                       <button
                         type="button"
                         onClick={() => removePage(p.id)}
                         aria-label={`Remove page ${idx + 1}`}
-                        className="text-zinc-500 hover:text-red-400 shrink-0"
+                        className="text-slate-400 hover:text-red-600 shrink-0"
                       >
                         <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
                       </button>
@@ -488,7 +488,7 @@ export function SmartScannerModal({
                 type="button"
                 onClick={() => void handleRunScan()}
                 disabled={scanning || analyzing}
-                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-violet-600 px-4 py-2.5 text-xs font-semibold text-white hover:bg-violet-500 disabled:opacity-50"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-xs font-semibold text-white hover:bg-indigo-700 disabled:opacity-50"
               >
                 {scanning ? (
                   <>
@@ -507,17 +507,17 @@ export function SmartScannerModal({
 
           {/* OCR Result & Direct Analysis */}
           {scanResult && (
-            <div className="space-y-4 border-t border-white/[0.08] pt-5">
+            <div className="space-y-4 border-t border-slate-200 pt-5">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <div className="flex items-center gap-2 text-xs text-emerald-300">
+                <div className="flex items-center gap-2 text-xs text-emerald-700">
                   <CheckCircle2 className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  <span className="font-medium">
+                  <span className="font-semibold">
                     Scanned {scanResult.pageCount} page(s) · Detected {scanResult.detectedLanguage} · {wordCount} words
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] text-zinc-400">{scanResult.scanQualityNote}</span>
+                  <span className="text-[11px] text-slate-500">{scanResult.scanQualityNote}</span>
                   {scannedText.trim().length > 0 && (
                     <button
                       type="button"
@@ -531,14 +531,14 @@ export function SmartScannerModal({
                       }
                       className={`inline-flex items-center gap-1 rounded-md border px-2.5 py-1 text-[11px] font-medium transition-colors whitespace-nowrap ${
                         activeItemId === 'smart-scanner-text' && audioStatus !== 'idle'
-                          ? 'border-violet-500 bg-violet-600 text-white'
-                          : 'border-white/[0.1] bg-white/[0.03] text-zinc-300 hover:bg-white/[0.08]'
+                          ? 'border-indigo-600 bg-indigo-600 text-white'
+                          : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
                       }`}
                     >
                       {activeItemId === 'smart-scanner-text' && audioStatus !== 'idle' ? (
                         <Square className="h-3 w-3" aria-hidden="true" />
                       ) : (
-                        <Volume2 className="h-3 w-3 text-violet-400" aria-hidden="true" />
+                        <Volume2 className="h-3 w-3 text-indigo-600" aria-hidden="true" />
                       )}
                       <span>
                         {activeItemId === 'smart-scanner-text' && audioStatus !== 'idle'
@@ -552,25 +552,25 @@ export function SmartScannerModal({
 
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <div>
-                  <label className="block text-[11px] font-medium text-zinc-400 mb-1">
+                  <label className="block text-[11px] font-medium text-slate-600 mb-1">
                     {t('agreementTitle')}
                   </label>
                   <input
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="w-full rounded-lg border border-white/[0.1] bg-[#07070C] px-3 py-1.5 text-xs text-zinc-100 focus:border-violet-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs text-slate-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-medium text-zinc-400 mb-1">
+                  <label className="block text-[11px] font-medium text-slate-600 mb-1">
                     {t('rulebookVersion')}
                   </label>
                   <select
                     value={selectedRulebookId}
                     onChange={(e) => setSelectedRulebookId(e.target.value)}
-                    className="w-full rounded-lg border border-white/[0.1] bg-[#07070C] px-3 py-1.5 text-xs text-zinc-100 focus:border-violet-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs text-slate-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
                   >
                     {rulebooks.map((rb) => (
                       <option key={rb.id} value={rb.id}>
@@ -581,13 +581,13 @@ export function SmartScannerModal({
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-medium text-zinc-400 mb-1">
+                  <label className="block text-[11px] font-medium text-slate-600 mb-1">
                     {t('outputLanguageLabel')}
                   </label>
                   <select
                     value={outputLangCode}
                     onChange={(e) => setOutputLangCode(e.target.value)}
-                    className="w-full rounded-lg border border-white/[0.1] bg-[#07070C] px-3 py-1.5 text-xs text-zinc-100 focus:border-violet-500 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs text-slate-900 focus:border-indigo-500 focus:bg-white focus:outline-none"
                   >
                     {SUPPORTED_LANGUAGES.map((lang) => (
                       <option key={lang.code} value={lang.code}>
@@ -607,7 +607,7 @@ export function SmartScannerModal({
                   value={outputCustomLang}
                   onChange={(e) => setOutputCustomLang(e.target.value)}
                   placeholder={t('customLanguagePlaceholder')}
-                  className="w-full rounded-lg border border-white/[0.12] bg-[#07070C] px-3 py-1.5 text-xs text-zinc-100 placeholder-zinc-500 focus:border-violet-500 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:bg-white focus:outline-none"
                 />
               )}
 
@@ -615,7 +615,7 @@ export function SmartScannerModal({
                 value={scannedText}
                 onChange={(e) => setScannedText(e.target.value)}
                 rows={8}
-                className="w-full rounded-lg border border-white/[0.08] bg-[#07070C] p-3 font-mono text-xs leading-relaxed text-zinc-200 focus:border-violet-500 focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50 p-3 font-mono text-xs leading-relaxed text-slate-800 focus:border-indigo-500 focus:bg-white focus:outline-none"
               />
 
               <div className="flex flex-wrap items-center justify-end gap-2.5">
@@ -623,7 +623,7 @@ export function SmartScannerModal({
                   type="button"
                   onClick={handleSendToEditor}
                   disabled={analyzing}
-                  className="rounded-lg border border-white/[0.12] bg-white/[0.03] px-4 py-2 text-xs font-medium text-zinc-200 hover:bg-white/[0.08] whitespace-nowrap"
+                  className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 whitespace-nowrap"
                 >
                   Open in Upload Editor
                 </button>
@@ -631,7 +631,7 @@ export function SmartScannerModal({
                   type="button"
                   onClick={() => void handleAnalyzeScanned()}
                   disabled={analyzing || scannedText.trim().length < 50}
-                  className="inline-flex items-center gap-2 rounded-lg bg-violet-600 px-5 py-2 text-xs font-semibold text-white hover:bg-violet-500 disabled:opacity-50 whitespace-nowrap"
+                  className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2 text-xs font-semibold text-white hover:bg-indigo-700 disabled:opacity-50 whitespace-nowrap"
                 >
                   {analyzing ? (
                     <>
